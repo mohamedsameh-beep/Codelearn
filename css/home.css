@@ -45,6 +45,27 @@ nav .container .menu-navbar-nav .nav-item .nav-link {
 
 body {
   font-family: "Poppins", sans-serif;
+  height: 5000px;
+  background-color: #fcfcfc;
+  background-image: linear-gradient(#FCFCFC, #FBFBFB);
+}
+
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+button,
+input,
+img {
+  outline: none !important;
+}
+
+.line-through {
+  text-decoration: line-through;
 }
 
 /*Start Header*/
@@ -92,13 +113,281 @@ body {
   width: 100%;
 }
 
+/*End Header*/
+/*Start Courses */
 .courses {
   background-color: rgba(222, 228, 233, 0.25);
   padding-top: 0;
   padding-bottom: 50px;
 }
+.courses .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.courses .container .owl-theme .course-cont {
+  position: relative;
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 25px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.courses .container .owl-theme .course-cont .course-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  padding-top: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+.courses .container .owl-theme .course-cont .course-title span {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #49495c;
+}
+.courses .container .owl-theme .course-cont .course-title h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  color: #191847;
+}
+.courses .container .owl-theme .course-cont .course-title p {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.courses .container .owl-theme .owl-dots {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 25px 0 25px 6px;
+  height: 100%;
+}
+.courses .container .owl-theme .owl-dots .owl-dot:not(:last-of-type) {
+  margin-bottom: 4px;
+}
+.courses .container .owl-theme .owl-dots .owl-dot:hover span, .courses .container .owl-theme .owl-dots .owl-dot.active span {
+  background-color: #ff4133;
+}
 
-/*End Header*/
+/* End Courses */
+/*Start Tutors*/
+.tutors {
+  position: relative;
+  margin: 0;
+  padding: 75px 15px;
+}
+.tutors h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  color: #191847;
+}
+.tutors p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 700px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+.tutors .theImg {
+  margin-top: 55px;
+  margin-bottom: 0;
+}
+.tutors .theImg .img {
+  background-color: #c1dee2;
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.tutors .theImg .img img {
+  height: 100px;
+  width: 100%;
+}
+.tutors .theImg span {
+  color: #191847;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 18px;
+  max-width: 125px;
+  display: block;
+  margin: auto;
+  line-height: 1.25;
+}
+
+/*End Tutors*/
+/* Start Pricing */
+.pricing {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: #fff;
+}
+.pricing h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  color: #191847;
+}
+.pricing p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 700px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+.pricing .cards {
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 75px 20px;
+}
+.pricing .cards .card {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px 45px;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.pricing .cards .card:hover {
+  box-shadow: 0 2px 29px rgba(0, 0, 0, 0.15) !important;
+  z-index: 5;
+  cursor: pointer;
+}
+.pricing .cards .card.feat {
+  box-shadow: 0 2px 40px rgba(0, 0, 0, 0.05);
+  background-color: #e9edf0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.pricing .cards .card.price-one {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.pricing .cards .card.price-third {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+.pricing .cards .card.feat:before {
+  content: "POPULAR";
+  font-family: "Montserrat", sans-serif;
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 5px 0;
+  background-color: #69a1ac;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+  left: -63px;
+  top: 33px;
+  transform: rotate(-45deg);
+}
+.pricing .cards .card .card-body {
+  padding: 0;
+}
+.pricing .cards .card .card-body h5 {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding-bottom: 0;
+  color: #858585;
+  margin-bottom: 0;
+}
+.pricing .cards .card .card-body h5.feat {
+  font-size: 20px;
+  font-weight: 700;
+}
+.pricing .cards .card .card-body p {
+  color: #191847;
+  font-weight: 800;
+  font-family: Montserrat;
+  font-size: 34px;
+  line-height: 1.25;
+}
+.pricing .cards .card .card-body p.feat {
+  font-size: 40px;
+}
+.pricing .cards .card .card-body span {
+  font-size: 12px;
+  font-family: Montserrat;
+  font-weight: 600;
+  color: #000;
+}
+.pricing .cards .card ul {
+  width: 100%;
+  list-style: none;
+  padding-inline-start: 0;
+  margin-bottom: calc(1rem + 15px);
+  margin-top: 1rem;
+}
+.pricing .cards .card ul li {
+  font-size: 14px;
+  padding: 0;
+  color: #404040;
+  font-family: Poppins;
+  font-weight: 300;
+  line-height: 1.25;
+  text-align: center;
+  margin-top: 5px;
+  background-color: transparent;
+  border: none;
+}
+.pricing .cards .card ul li.line-through {
+  color: #a0a0a0;
+}
+
+/* End Pricing */
 .mainBtn {
   background-color: #ff4133;
   font-size: 16px;

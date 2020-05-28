@@ -1,7 +1,20 @@
 body {
-    font-family: 'Poppins', sans-serif
+    font-family: 'Poppins', sans-serif;
+    height: 5000px;
+    background-color: #fcfcfc;
+    background-image: linear-gradient(#FCFCFC, #FBFBFB);
 }
 
-// * {
-//     border: 2px solid #f00;
-// }
+* {
+    @include prefixer(user-select, none, webkit moz o ms);
+}
+
+button,
+input,
+img {
+    outline: none !important;
+}
+
+.line-through {
+    text-decoration: line-through;
+}

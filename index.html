@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Font Awsome -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Owl Carousal -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- Animate Css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/home.css" />
 
@@ -73,24 +78,159 @@
     <!-- Start Courses -->
     <div class="courses">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <img src="imgs/courses.png">
+            <div class="owl-carousel owl-theme">
+                <div class="row no-gutters course-cont">
+                    <div class="col-lg-5 img-title">
+                        <img src="imgs/courses.png">
+                    </div>
+                    <div class="course-title col-lg-5 offset-lg-1  text-center text-lg-left">
+                        <span>Complete Subjects</span>
+                        <h2>Courses for all levels available</h2>
+                        <p>We've got courses for all subjects at all levels, whether you're a beginner or professional.</p>
+                        <div class="btn-cont">
+                            <a class="mainBtn btn" href="#"><i class="fa fa-apple"></i>IOS Download</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-6 courses-title">
-                    <span>Complete Subjects</span>
-                    <h2>Courses for all levels available</h2>
-                    <p>We've got courses for all subjects at all levels, whether you're a beginner or professional.</p>
-                    <a class="mainBtn btn" href="#"><i class="fa fa-apple"></i>IOS Download</a>
+                <div class="row no-gutters course-cont">
+                    <div class="col-lg-5 img-title">
+                        <img src="imgs/courses.png">
+                    </div>
+                    <div class="course-title col-lg-5 offset-lg-1  text-center text-lg-left">
+                        <span>Online courses</span>
+                        <h2>Learn something brand new online.</h2>
+                        <p>Study from the comfort of your own home, or wherever you may be without commuting.</p>
+                        <div class="btn-cont">
+                            <a class="mainBtn btn" href="#"><i class="fa fa-android"></i>Play Store</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters course-cont">
+                    <div class="col-lg-5 img-title">
+                        <img src="imgs/courses.png">
+                    </div>
+                    <div class="course-title col-lg-5 offset-lg-1  text-center text-lg-left">
+                        <span>Simple registration</span>
+                        <h2>Studying couldn't be any easier.</h2>
+                        <p>Registration takes just a few seconds. You can explore all our courses immediately.</p>
+                        <div class="btn-cont">
+                            <a class="mainBtn btn" href="#"><i class="fa fa-windows" aria-hidden="true"></i>Windows Apps</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Courses -->
+    <!--Start Tutors-->
+    <div class="tutors text-center">
+        <div class="container">
+            <h2 class="h1">Our top Tutors</h2>
+            <p>Showcase some of your highest rated tutors, top students or members of staff here. Images are automatically scaled to fit it displays well.</p>
+            <div class="row theImgs">
+                <div class="theImg col-6 col-md-4 col-lg-2">
+                    <div class="img">
+                        <img src="imgs/tutor1.svg" alt="" srcset="">
+                    </div>
+                    <span class="text">Michael Smithington</span>
+                </div>
+                <div class="theImg col-6 col-md-4 col-lg-2">
+                    <div class="img">
+                        <img src="imgs/tutor2.svg" alt="" srcset="">
+                    </div>
+                    <span class="text">Kathy Matthews</span>
+                </div>
+                <div class="theImg col-6 col-md-4 col-lg-2">
+                    <div class="img">
+                        <img src="imgs/tutor3.svg" alt="" srcset="">
+                    </div>
+                    <span class="text">Aaron Robinsons</span>
+                </div>
+                <div class="theImg col-6 col-md-4 col-lg-2">
+                    <div class="img">
+                        <img src="imgs/tutor4.svg" alt="" srcset="">
+                    </div>
+                    <span class="text">Niall Collingwood</span>
+                </div>
+                <div class="theImg col-6 col-md-4 col-lg-2">
+                    <div class="img">
+                        <img src="imgs/tutor5.svg" alt="" srcset="">
+                    </div>
+                    <span class="text">Joanne McCartney</span>
+                </div>
+                <div class="theImg col-6 col-md-4 col-lg-2">
+                    <div class="img">
+                        <img src="imgs/tutor6.svg" alt="" srcset="">
+                    </div>
+                    <span class="text">Bobby Witherspoon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Tutors-->
+    <!--Start Pricicng-->
+    <div class="pricing text-center">
+        <div class="container">
+            <h2 class="h1"> Pricing</h2>
+            <p class="lead">Offer multiple packages or monthly subscriptions? Why not showcase your featured price plans here, bold and beautifully.</p>
+            <div class="row no-gutters cards">
+                <div class="col-lg-4 col-md-8 col-xs-10">
+                    <div class="card text-center price-one">
+                        <div class="card-body">
+                            <h5 class="card-title">Basic</h5>
+                            <p class="card-text">FREE</p>
+                            <span>monthly</span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Unlimited Subjects</li>
+                            <li class="list-group-item">Course Management</li>
+                            <li class="list-group-item">Progress Statistics</li>
+                            <li class="list-group-item line-through">Exportable Data</li>
+                        </ul>
+                        <a class="nav-link m-0 secondBtn" href="#"><i class="fa fa-apple"></i> Register</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-xs-10">
+                    <div class="card text-center feat">
+                        <div class="card-body">
+                            <h5 class="card-title feat">Growth</h5>
+                            <p class="card-text feat">$1.99</p>
+                            <span>monthly</span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Unlimited Subjects</li>
+                            <li class="list-group-item">Course Management</li>
+                            <li class="list-group-item">Progress Statistics</li>
+                            <li class="list-group-item">Exportable Data</li>
+                        </ul>
+                        <a class="mainBtn btn m-0" href="#"><i class="fa fa-apple"></i> Register</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-8 col-xs-10">
+                    <div class="card text-center price-three">
+                        <div class="card-body">
+                            <h5 class="card-title">Professor</h5>
+                            <p class="card-text">$4.99</p>
+                            <span>monthly</span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Unlimited Subjects</li>
+                            <li class="list-group-item">Course Management</li>
+                            <li class="list-group-item">Progress Statistics</li>
+                            <li class="list-group-item">Exportable Data</li>
+                        </ul>
+                        <a class="nav-link m-0 secondBtn" href="#"><i class="fa fa-apple"></i> Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Pricicng-->
     <!-- Start JavaScript -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <!-- End JavaScript -->
 </body>
