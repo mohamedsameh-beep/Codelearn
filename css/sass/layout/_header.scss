@@ -10,7 +10,7 @@ nav {
     background-color: transparent;
     padding-top: 15px !important;
     padding-bottom: 15px !important;
-    @include prefixer(transation, all .2s linear, webkit moz o ms);
+    @include prefixer(transition, all .2s linear, webkit moz o ms);
     .container {
         .navbar-brand {
             display: flex;
