@@ -1,5 +1,5 @@
-// Owl Carousal
 $(document).ready(function() {
+    // Owl Carousal
     var owl = $('.owl-carousel');
     owl.owlCarousel({
         animateOut: 'fadeOut',
@@ -9,5 +9,18 @@ $(document).ready(function() {
         autoplay: true,
         autoplayTimeout: 5000,
         autoplayHoverPause: true
+    });
+    // FAQs sectiton hide and show panel
+    $('.faqs-one .btns button').on('click', function() {
+        $(this).toggleClass('active');
+        $(this).next().toggleClass('active');
+    });
+    //Add class scrolled to navbar when scroll
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= 10) {
+            $('nav').addClass('scrolled');
+        } else {
+            $('nav').removeClass('scrolled');
+        }
     });
 });

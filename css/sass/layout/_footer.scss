@@ -1,0 +1,97 @@
+/*Start Footer*/
+
+.footer {
+    padding-top: 75px;
+    padding-bottom: 55px;
+    margin-bottom: 0!important;
+    position: relative;
+    background-color: #fff;
+    color: #303669;
+    .img-right {
+        position: absolute;
+        right: -2%;
+        bottom: -17%;
+        transform: rotate(45deg);
+        width: 100px;
+        img {
+            width: 100%;
+        }
+    }
+    .container {
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            padding-right: 40px;
+            .logo {
+                width: 120px;
+                margin-bottom: 20px;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        h6 {
+            font-size: 22px;
+            font-family: Poppins;
+            font-weight: 700;
+            color: #191847;
+            line-height: 2.2;
+            margin-bottom: 10px;
+        }
+        p {
+            max-width: 250px;
+            font-family: Poppins;
+            font-size: 16px;
+            line-height: 1.75;
+            font-weight: 300;
+        }
+        ul {
+            li {
+                font-size: 16px;
+                color: #191847;
+                font-family: Poppins;
+                font-weight: 300;
+                line-height: 1.5;
+                text-align: left;
+                margin-top: 10px;
+                display: table-row;
+            }
+        }
+        .footer-icons {
+            display: flex;
+            a {
+                justify-content: center;
+                align-items: center;
+                padding-right: 25px;
+                color: $blueColor;
+                i {
+                    color: $blueColor;
+                    font-size: 25px;
+                    text-decoration: none!important;
+                }
+            }
+        }
+    }
+    .copyright {
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        div {
+            a {
+                color: $blueColor;
+                font-weight: bold;
+                @include prefixer(transition, color .2s ease-in-out, webkit moz o ms);
+                &:hover {
+                    color: $redColor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+/*End Footer*/
