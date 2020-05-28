@@ -1,0 +1,56 @@
+/*Start Header*/
+
+.header {
+    display: flex;
+    width: 100%;
+    padding: 160px 0 100px;
+    justify-content: center;
+    align-items: center;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row-reverse;
+        .header-title {
+            padding: 73px 0;
+            h1 {
+                font-family: 'Poppins', sans-serif;
+                font-weight: 800;
+                font-size: 50px;
+                line-height: 1.25;
+                margin-bottom: 10px;
+                color: $blueColor;
+            }
+            p {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 22px;
+                font-weight: 500;
+                line-height: 1.5;
+                margin-bottom: 25px;
+            }
+            .btns {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                margin-top: 20px;
+            }
+        }
+        .header-img {
+            padding: 0 15px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// Start Courses
+.courses {
+    background-color: rgba(222, 228, 233, .25);
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+// End Courses 
+
+/*End Header*/
