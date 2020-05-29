@@ -23,4 +23,12 @@ $(document).ready(function() {
             $('nav').removeClass('scrolled');
         }
     });
+
+    $('nav .navbar-toggler').on('click', function() {
+        $(this).toggleClass('clicked');
+        setTimeout(() => {
+            $(this).toggleClass('clicked');
+        }, 500);
+        $('button .navbar-bars').toggleClass('clicked animate__animated animate__heartBeat');
+    });
 });

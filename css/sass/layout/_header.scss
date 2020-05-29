@@ -1,5 +1,6 @@
+/* Start Navbar */
+
 nav {
-    margin-top: 10px;
     background-color: transparent;
     padding-top: 15px !important;
     padding-bottom: 15px !important;
@@ -13,39 +14,130 @@ nav {
                 height: auto;
             }
         }
-        .menu-navbar-nav {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .nav-item {
-                margin-left: 15px;
-                margin-right: 15px;
-                .nav-link {
-                    font-family: 'Poppins', sans-serif;
-                    font-weight: 600;
-                    font-size: 18px;
-                    color: #000;
-                    line-height: 1;
-                    &:hover {
-                        color: $blueColor;
+        .navbar-toggler {
+            border: none;
+            position: relative;
+            &.clicked {
+                pointer-events: none;
+            }
+            span {
+                &.navbar-bars {
+                    cursor: pointer;
+                    display: block;
+                    height: 22px;
+                    margin: 0px;
+                    position: relative;
+                    transition: .5s ease-in-out;
+                    width: 28px;
+                    &.clicked {
+                        height: 30px;
+                        span {
+                            &:nth-child(1) {
+                                @include prefixer(transform, rotate(45deg), webkit moz o ms);
+                                top: 15px !important;
+                            }
+                            &:nth-child(2) {
+                                display: none;
+                            }
+                            &:nth-child(3) {
+                                @include prefixer(transform, rotate(-45deg), webkit moz o ms);
+                                top: 15px !important;
+                            }
+                        }
+                    }
+                    span {
+                        @include prefixer(transition, .25s ease-in-out, webkit moz o ms);
+                        background: $blueColor;
+                        border-radius: 9px;
+                        display: block;
+                        height: 3px;
+                        left: 0;
+                        position: absolute;
+                        width: 100%;
+                        top: 0;
+                        &:nth-child(2) {
+                            top: 10px;
+                        }
+                        &:nth-child(3) {
+                            top: 20px;
+                        }
                     }
                 }
             }
         }
+        .navbar-collapse {
+            @media(max-width: 992px) {
+                background-color: #fcfcfc;
+                color: $blueColor;
+                padding-bottom: 20px;
+                padding-top: 20px;
+                .menu-navbar-nav {
+                    &:first-of-type {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            .menu-navbar-nav {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .nav-item {
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    .nav-link {
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 600;
+                        font-size: 18px;
+                        color: #000;
+                        line-height: 1;
+                        &:hover {
+                            color: $blueColor;
+                        }
+                    }
+                }
+            }
+            ul.navbar-nav {
+                align-items: center;
+            }
+        }
     }
     &.scrolled {
-        position: fixed;
-        margin-top: 0!important;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 75px;
+        @include prefixer(box-shadow, 0 4px 6px 0 rgba(12, 0, 46, .05), webkit moz ms);
         background-color: #fff!important;
-        -webkit-box-shadow: 0 4px 6px 0 rgba(12, 0, 46, .05);
-        box-shadow: 0 4px 6px 0 rgba(12, 0, 46, .05);
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+        @media(min-width: 1200px) {
+            .container {
+                .navbar-brand {
+                    padding: 0;
+                    img {
+                        width: 140px;
+                        height: auto;
+                    }
+                }
+                .menu-navbar-nav {
+                    .nav-item {
+                        .nav-link {
+                            font-size: 15px !important;
+                        }
+                    }
+                }
+                .mainBtn {
+                    font-size: 15px !important;
+                    padding: 10px 25px!important;
+                }
+            }
+        }
+    }
+    @media (max-width: 1200px) {
+        padding-top: 35px !important;
+        padding-bottom: 35px !important;
         .container {
             .navbar-brand {
+                padding: 0;
                 img {
                     width: 140px;
                     height: auto;
@@ -54,23 +146,17 @@ nav {
             .menu-navbar-nav {
                 .nav-item {
                     .nav-link {
-                        padding-right: .5rem !important;
-                        padding-left: .5rem !important;
-                        font-size: 15px;
+                        font-size: 15px !important;
                     }
                 }
             }
             .mainBtn {
-                font-size: 15px;
+                font-size: 15px !important;
                 padding: 10px 25px!important;
             }
         }
     }
-    &.fixed-top {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
 }
+
+
+/* End Navbar */
