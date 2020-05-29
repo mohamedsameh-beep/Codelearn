@@ -115,11 +115,14 @@
                     padding-right: 15px;
                     padding-left: 15px;
                     width: 100%;
-                    @media(max-width: 991.99px) {
-                        padding: 70px 50px 0 !important;
+                    @media(min-width: 992px) {
+                        padding: 70px 50px !important;
                     }
-                    @media(max-width: 992px) {
-                        padding: 70px 15px 0;
+                    @media(max-width: 499.99px) {
+                        padding: 70px 0 !important;
+                    }
+                    @media(max-width: 399.99px) {
+                        padding: 70px 15px !important;
                     }
                     span {
                         font-family: 'Poppins', sans-serif;
