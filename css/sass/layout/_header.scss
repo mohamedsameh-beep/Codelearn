@@ -18,6 +18,9 @@ nav {
             width: 94px;
             background-color: #fff;
             z-index: 3000;
+            @media (max-width: 576px) {
+                padding: 15px 0 12px 10px;
+            }
             .navbar-toggle {
                 background-color: transparent;
                 border: none;
@@ -78,6 +81,10 @@ nav {
             position: absolute;
             left: 94px;
             padding: 15px 0;
+            @media (max-width: 576px) {
+                padding: 19px 0;
+                left: 70px;
+            }
             &.closed {
                 z-index: 4000;
             }
@@ -85,20 +92,34 @@ nav {
                 width: 60px;
                 height: auto;
                 margin-right: 10px;
+                @media(max-width: 576px) {
+                    width: 50px;
+                    margin-right: 8px;
+                }
             }
         }
     }
-    .container {
+    .navbar-container {
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 100%;
         .btns {
             display: flex;
             align-items: flex-end;
             justify-content: flex-end;
             height: 100%;
-            padding: 16px 0;
+            padding: 16px 30px 16px 0;
             width: 100%;
-            @media (max-width: 992px) {
+            @media (max-width: 768px) {
                 padding-right: 15px;
-                padding-left: 15px;
             }
         }
         .navbar-menu {
@@ -142,10 +163,17 @@ nav {
                     padding: 50px 0 0 0;
                     color: #191847;
                     font-weight: 700;
+                    @media (max-width: 576px) {
+                        padding: 19px 0;
+                    }
                     img {
                         width: 60px;
                         height: auto;
                         margin-right: 10px;
+                        @media(max-width: 576px) {
+                            width: 50px;
+                            margin-right: 8px;
+                        }
                     }
                 }
                 .navbar-nav {

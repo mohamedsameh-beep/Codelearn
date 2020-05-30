@@ -471,11 +471,14 @@
                 line-height: 1.25;
                 margin-bottom: 10px;
                 color: $blueColor;
-                @media (max-width: 499.99px) {
-                    font-size: 30px !important;
-                }
                 @media (max-width: 992px) {
                     font-size: 35px !important;
+                }
+                @media (max-width: 576px) {
+                    font-size: 30px !important;
+                }
+                @media (max-width: 499.99px) {
+                    font-size: 26px !important;
                 }
             }
             p {
@@ -549,15 +552,18 @@
         }
         .faqs-img {
             padding: 20px;
-            @media(max-width: 1200px) {
-                margin-top: 30px;
+            &.min {
+                margin-top: 50px;
             }
+            // @media(max-width: 1200px) {
+            //     margin-top: 30px;
+            // }
             img {
-                width: 100%;
+                width: 100%
             }
         }
         .owl-dots {
-            margin: 0!important;
+            margin: 35px!important;
             .owl-dot {
                 &:hover,
                 &.active {
