@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    // Animation
+    AOS.init();
     // Owl Carousal
     var owl = $('.owl-carousel');
     owl.owlCarousel({
