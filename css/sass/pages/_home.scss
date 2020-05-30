@@ -313,7 +313,7 @@
         margin-right: auto;
         margin-bottom: 0;
         @media (max-width: 992px) {
-            font-size: 15px !important;
+            font-size: 13px !important;
             padding: 0 15px;
         }
     }
@@ -404,6 +404,7 @@
                     font-family: Montserrat;
                     font-size: 34px;
                     line-height: 1.25;
+                    margin-bottom: 0;
                     &.feat {
                         font-size: 40px;
                     }
