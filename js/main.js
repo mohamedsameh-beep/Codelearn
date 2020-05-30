@@ -33,7 +33,9 @@ $(document).ready(function() {
 
     function barsClick() {
         $('nav .navbar-brand.main').removeClass('closed');
-        $('nav .navbar-toggler-parent').addClass('opend');
+        $('nav .navbar-toggler-parent').animate({
+            width: '400'
+        });
         $('button .navbar-bars').addClass('clicked animate__animated animate__heartBeat');
         $('nav .navbar-menu .navbar-overlay').fadeIn();
         $('nav .navbar-menu .navbar-info').css('transform', 'translateX(0px)');
@@ -43,7 +45,9 @@ $(document).ready(function() {
 
     function barsClickClosed() {
         $('nav .navbar-brand.main').addClass('closed');
-        $('nav .navbar-toggler-parent').removeClass('opend');
+        $('nav .navbar-toggler-parent').animate({
+            width: '94'
+        });
         $('button .navbar-bars').removeClass('clicked animate__animated animate__heartBeat');
         $('nav .navbar-menu .navbar-overlay').fadeOut();
         $('nav .navbar-menu .navbar-info').css('transform', 'translateX(-100px)');
