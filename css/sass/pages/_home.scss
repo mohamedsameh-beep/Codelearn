@@ -146,7 +146,7 @@
                         margin-left: auto;
                         max-width: 400px;
                         @media (max-width: 499.99px) {
-                            font-size: 30px !important;
+                            font-size: 26px !important;
                         }
                         @media (min-width:992px) and (max-width: 1200px) {
                             font-size: 37px !important;
@@ -161,6 +161,9 @@
                         margin-right: auto;
                         margin-left: auto;
                         @media (max-width: 499.99px) {
+                            font-size: 13px !important;
+                        }
+                        @media (max-width: 991.99px) {
                             font-size: 14px !important;
                         }
                         @media (min-width:992px) and (max-width: 1200px) {
@@ -221,11 +224,11 @@
         line-height: 1.25;
         margin-bottom: 10px;
         color: $blueColor;
-        @media (max-width: 499.99px) {
-            font-size: 30px !important;
-        }
         @media (max-width: 992px) {
             font-size: 35px !important;
+        }
+        @media (max-width: 499.99px) {
+            font-size: 26px !important;
         }
     }
     p {
@@ -240,6 +243,12 @@
         margin-bottom: 0;
         @media (max-width: 992px) {
             font-size: 15px !important;
+        }
+        @media (max-width: 768px) {
+            font-size: 14px !important;
+        }
+        @media (max-width: 576px) {
+            font-size: 13px !important;
         }
     }
     .theImg {
@@ -295,11 +304,11 @@
         line-height: 1.25;
         margin-bottom: 10px;
         color: $blueColor;
-        @media (max-width: 499.99px) {
-            font-size: 30px !important;
-        }
         @media (max-width: 992px) {
             font-size: 35px !important;
+        }
+        @media (max-width: 499.99px) {
+            font-size: 26px !important;
         }
     }
     p.lead {
@@ -498,7 +507,7 @@
                 max-width: 500px;
                 @media(max-width: 992px) {
                     max-width: 700px;
-                    font-size: 15px !important;
+                    font-size: 13px !important;
                 }
             }
             .btns {
@@ -553,6 +562,12 @@
                         margin-bottom: 20px;
                         @media(max-width: 992px) {
                             font-size: 14px !important;
+                        }
+                        @media(max-width: 768px) {
+                            font-size: 13px !important;
+                        }
+                        @media(max-width: 576px) {
+                            font-size: 12px !important;
                         }
                     }
                 }
@@ -643,7 +658,7 @@
                             font-size: 35px !important;
                         }
                         @media (max-width: 499.99px) {
-                            font-size: 30px !important;
+                            font-size: 26px !important;
                         }
                     }
                     p {
@@ -652,10 +667,10 @@
                         font-weight: 300;
                         line-height: 1.5;
                         @media (max-width: 992px) {
-                            font-size: 15px !important;
+                            font-size: 14px !important;
                         }
                         @media (max-width: 499.99px) {
-                            font-size: 14px !important;
+                            font-size: 13px !important;
                         }
                     }
                 }
@@ -747,10 +762,10 @@
                 line-height: 1.5;
                 max-width: 700px;
                 @media (max-width: 992px) {
-                    font-size: 15px !important;
+                    font-size: 14px !important;
                 }
                 @media (max-width: 499.99px) {
-                    font-size: 14px !important;
+                    font-size: 13px !important;
                 }
             }
             .btns {
