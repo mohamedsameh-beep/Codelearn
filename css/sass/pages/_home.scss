@@ -46,7 +46,7 @@
                     font-size: 29px !important;
                 }
                 @media (max-width: 576px) {
-                    font-size: 27px !important;
+                    font-size: 23px !important;
                 }
             }
             p {
@@ -54,9 +54,9 @@
                 font-size: 22px;
                 font-weight: 500;
                 line-height: 1.5;
-                margin-bottom: 25px;
+                margin-bottom: 5px;
                 @media (max-width: 499.99px) {
-                    font-size: 16px !important;
+                    font-size: 15px !important;
                 }
                 @media (max-width: 768px) {
                     font-size: 20px;
@@ -142,8 +142,9 @@
                         font-weight: 400;
                         line-height: 1.5;
                         color: #49495c;
+                        margin-bottom: 10px;
                         @media (max-width: 499.99px) {
-                            font-size: 18px !important;
+                            font-size: 16px !important;
                         }
                     }
                     h2 {
@@ -151,13 +152,13 @@
                         font-weight: 800;
                         font-size: 40px;
                         line-height: 1.25;
-                        margin-bottom: 10px;
+                        margin-bottom: 15px;
                         color: $blueColor;
                         margin-right: auto;
                         margin-left: auto;
                         max-width: 400px;
                         @media (max-width: 499.99px) {
-                            font-size: 26px !important;
+                            font-size: 20px !important;
                         }
                         @media (min-width:992px) and (max-width: 1200px) {
                             font-size: 37px !important;
