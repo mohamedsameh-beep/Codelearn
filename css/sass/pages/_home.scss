@@ -2,7 +2,6 @@
 
 .header {
     display: flex;
-    width: 100%;
     padding: 160px 0 100px;
     justify-content: center;
     align-items: center;
@@ -16,31 +15,38 @@
         align-items: center;
         flex-direction: row-reverse;
         .header-title {
-            padding: 73px 15px;
+            padding: 0 15px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 40px;
             @media(max-width: 992px) {
-                padding: 0 15px;
-                margin-top: 40px;
                 position: relative;
                 order: 2;
             }
             @media(max-width: 1200px) {
-                padding: 45px 0;
+                padding: 0;
             }
             h1 {
                 font-family: 'Poppins', sans-serif;
                 font-weight: 800;
-                font-size: 50px;
+                font-size: 40px;
                 line-height: 1.25;
                 margin-bottom: 10px;
                 color: $blueColor;
-                @media (max-width: 499.99px) {
+                @media (max-width: 1200px) {
+                    font-size: 36px !important;
+                }
+                @media (max-width: 992px) {
                     font-size: 34px !important;
                 }
                 @media (max-width: 768px) {
-                    font-size: 44px;
+                    font-size: 29px !important;
                 }
-                @media (max-width: 1200px) {
-                    font-size: 47px;
+                @media (max-width: 576px) {
+                    font-size: 27px !important;
                 }
             }
             p {
@@ -61,16 +67,21 @@
                 justify-content: left;
                 align-items: center;
                 margin-top: 20px;
+                width: 100%;
             }
         }
         .header-img {
-            @media (max-width: 576px) {
-                margin-top: 40px !important;
-            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             @media(max-width: 992px) {
                 margin-top: 20px;
                 position: relative;
                 order: 1;
+            }
+            @media (max-width: 576px) {
+                margin-top: 40px !important;
             }
             padding: 0 15px;
             img {

@@ -1,6 +1,4 @@
 $(document).ready(function() {
-    // Animation
-    AOS.init();
     // Owl Carousal
     var owl = $('.owl-carousel');
     owl.owlCarousel({
@@ -55,4 +53,6 @@ $(document).ready(function() {
         $('nav .navbar-menu .navbar-info').css('transform', 'translateX(-100px)');
         $('body').css('cursor', 'default');
     }
+    // Animation
+    AOS.init();
 });
