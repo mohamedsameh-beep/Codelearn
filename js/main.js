@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    'use strict';
+    // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
     // Owl Carousal
     var owl = $('.owl-carousel');
     owl.owlCarousel({
@@ -10,6 +16,7 @@ $(document).ready(function() {
         autoplayTimeout: 5000,
         autoplayHoverPause: true
     });
+
     // FAQs sectiton hide and show panel
     $('.faqs-one .btns button').on('click', function() {
         $(this).toggleClass('active');

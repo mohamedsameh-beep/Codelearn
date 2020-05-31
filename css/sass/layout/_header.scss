@@ -53,7 +53,7 @@ nav {
                             }
                         }
                         span {
-                            @include prefixer(transition, .25s ease-in-out, webkit moz o ms);
+                            @include prefixer(transition, .4s ease-in-out, webkit moz o ms);
                             background: $blueColor;
                             border-radius: 9px;
                             display: block;
