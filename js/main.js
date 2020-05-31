@@ -6,7 +6,7 @@ $(document).ready(function() {
     }
     window.scrollTo(0, 0);
     // Owl Carousal
-    var owl = $('.owl-carousel');
+    let owl = $('.owl-carousel');
     owl.owlCarousel({
         animateOut: 'fadeOut',
         items: 1,
@@ -18,47 +18,60 @@ $(document).ready(function() {
     });
 
     // FAQs sectiton hide and show panel
-    $('.faqs-one .btns button').on('click', function() {
+    let buttonslide = $('.faqs-one .btns button');
+    buttonslide.on('click', function() {
         $(this).toggleClass('active');
         $(this).next().toggleClass('active');
     });
-    $('nav .navbar-menu .navbar-info, nav .navbar-toggle').on('click', function(e) {
+    // Prevent navbarToggle and navbarInfo when click it, not execute 2 functions together
+    let navInfoAndToggle = $('nav .navbar-menu .navbar-info, nav .navbar-toggle');
+    navInfoAndToggle.on('click', function(e) {
         if ($('nav .navbar-menu .navbar-overlay:hidden')) {
             e.stopPropagation();
         }
     });
-    $('body, html').on('click', function() {
+    // When click on body the left navbar being hidden
+    let body = $('body, html');
+    body.on('click', function() {
         barsClickClosed();
     });
-    $('nav .navbar-toggle').on('click', function() {
-        if ($('button .navbar-bars').hasClass('clicked')) {
+    // When click on navBar toggle execute func
+    let navbarToggle = $('nav .navbar-toggle'),
+        navbarBars = $('button .navbar-bars');
+    navbarToggle.on('click', function() {
+        if (navbarBars.hasClass('clicked')) {
             barsClickClosed();
         } else {
             barsClick();
         }
     });
+    let navBarbrand = $('nav .navbar-brand.main'),
+        navbartogglerParent = $('nav .navbar-toggler-parent'),
+        navbarOverlay = $('nav .navbar-menu .navbar-overlay'),
+        navbarInfo = $('nav .navbar-menu .navbar-info'),
+        cursorClose = 'url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzJweCIgdmVyc2lvbj0iMS4xIiBoZWlnaHQ9IjMycHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiPgogIDxnPgogICAgPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTI4Ljk0MSwzMS43ODZMMC42MTMsNjAuMTE0Yy0wLjc4NywwLjc4Ny0wLjc4NywyLjA2MiwwLDIuODQ5YzAuMzkzLDAuMzk0LDAuOTA5LDAuNTksMS40MjQsMC41OSAgIGMwLjUxNiwwLDEuMDMxLTAuMTk2LDEuNDI0LTAuNTlsMjguNTQxLTI4LjU0MWwyOC41NDEsMjguNTQxYzAuMzk0LDAuMzk0LDAuOTA5LDAuNTksMS40MjQsMC41OWMwLjUxNSwwLDEuMDMxLTAuMTk2LDEuNDI0LTAuNTkgICBjMC43ODctMC43ODcsMC43ODctMi4wNjIsMC0yLjg0OUwzNS4wNjQsMzEuNzg2TDYzLjQxLDMuNDM4YzAuNzg3LTAuNzg3LDAuNzg3LTIuMDYyLDAtMi44NDljLTAuNzg3LTAuNzg2LTIuMDYyLTAuNzg2LTIuODQ4LDAgICBMMzIuMDAzLDI5LjE1TDMuNDQxLDAuNTljLTAuNzg3LTAuNzg2LTIuMDYxLTAuNzg2LTIuODQ4LDBjLTAuNzg3LDAuNzg3LTAuNzg3LDIuMDYyLDAsMi44NDlMMjguOTQxLDMxLjc4NnoiLz4KICA8L2c+Cjwvc3ZnPgo=),auto';
 
     function barsClick() {
-        $('nav .navbar-brand.main').removeClass('closed');
-        $('nav .navbar-toggler-parent').animate({
+        navBarbrand.removeClass('closed');
+        navbartogglerParent.animate({
             width: '400'
         });
-        $('button .navbar-bars').addClass('clicked animate__animated animate__heartBeat');
-        $('nav .navbar-menu .navbar-overlay').fadeIn();
-        $('nav .navbar-menu .navbar-info').css('transform', 'translateX(0px)');
-        $('nav .navbar-menu .navbar-info').css('cursor', 'default');
-        $("body").css('cursor', 'url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzJweCIgdmVyc2lvbj0iMS4xIiBoZWlnaHQ9IjMycHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiPgogIDxnPgogICAgPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTI4Ljk0MSwzMS43ODZMMC42MTMsNjAuMTE0Yy0wLjc4NywwLjc4Ny0wLjc4NywyLjA2MiwwLDIuODQ5YzAuMzkzLDAuMzk0LDAuOTA5LDAuNTksMS40MjQsMC41OSAgIGMwLjUxNiwwLDEuMDMxLTAuMTk2LDEuNDI0LTAuNTlsMjguNTQxLTI4LjU0MWwyOC41NDEsMjguNTQxYzAuMzk0LDAuMzk0LDAuOTA5LDAuNTksMS40MjQsMC41OWMwLjUxNSwwLDEuMDMxLTAuMTk2LDEuNDI0LTAuNTkgICBjMC43ODctMC43ODcsMC43ODctMi4wNjIsMC0yLjg0OUwzNS4wNjQsMzEuNzg2TDYzLjQxLDMuNDM4YzAuNzg3LTAuNzg3LDAuNzg3LTIuMDYyLDAtMi44NDljLTAuNzg3LTAuNzg2LTIuMDYyLTAuNzg2LTIuODQ4LDAgICBMMzIuMDAzLDI5LjE1TDMuNDQxLDAuNTljLTAuNzg3LTAuNzg2LTIuMDYxLTAuNzg2LTIuODQ4LDBjLTAuNzg3LDAuNzg3LTAuNzg3LDIuMDYyLDAsMi44NDlMMjguOTQxLDMxLjc4NnoiLz4KICA8L2c+Cjwvc3ZnPgo=),auto');
+        navbarBars.addClass('clicked animate__animated animate__heartBeat');
+        navbarOverlay.fadeIn();
+        navbarInfo.css('transform', 'translateX(0px)');
+        navbarInfo.css('cursor', 'default');
+        body.css('cursor', cursorClose);
     }
 
     function barsClickClosed() {
-        $('nav .navbar-brand.main').addClass('closed');
-        $('nav .navbar-toggler-parent').animate({
+        navBarbrand.addClass('closed');
+        navbartogglerParent.animate({
             width: '94'
         });
-        $('button .navbar-bars').removeClass('clicked animate__animated animate__heartBeat');
-        $('nav .navbar-menu .navbar-overlay').fadeOut();
-        $('nav .navbar-menu .navbar-info').css('transform', 'translateX(-100px)');
-        $('body').css('cursor', 'default');
+        navbarBars.removeClass('clicked animate__animated animate__heartBeat');
+        navbarOverlay.fadeOut();
+        navbarInfo.css('transform', 'translateX(-100px)');
+        body.css('cursor', 'default');
     }
     // Animation
     AOS.init();
