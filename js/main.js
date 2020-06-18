@@ -1,4 +1,4 @@
-$(document).ready(function() {
+jQuery(document).ready(function($) {
     'use strict';
     // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
     if ('scrollRestoration' in history) {
@@ -6,7 +6,7 @@ $(document).ready(function() {
     }
     window.scrollTo(0, 0);
     // Owl Carousal
-    let owl = $('.owl-carousel');
+    let owl = $('.owl-carousel-homepage');
     owl.owlCarousel({
         animateOut: 'fadeOut',
         items: 1,
@@ -34,13 +34,17 @@ $(document).ready(function() {
     let body = $('body, html');
     body.on('click', function() {
         barsClickClosed();
+        navbarToggle.removeClass('active');
     });
     // When click on navBar toggle execute func
-    let navbarBars = $('button .navbar-bars');
-    navbarBars.on('click', function() {
-        if (navbarBars.hasClass('clicked')) {
+    let navbarBarsParent = $('button.navbar-toggle'),
+        navbarToggle = $('nav .navbar-toggle');
+    navbarToggle.on('click', function() {
+        if (navbarToggle.hasClass('active')) {
+            navbarToggle.removeClass('active');
             barsClickClosed();
         } else {
+            navbarToggle.addClass('active');
             barsClick();
         }
     });
@@ -51,15 +55,12 @@ $(document).ready(function() {
         cursorClose = 'url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMzJweCIgdmVyc2lvbj0iMS4xIiBoZWlnaHQ9IjMycHgiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiPgogIDxnPgogICAgPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTI4Ljk0MSwzMS43ODZMMC42MTMsNjAuMTE0Yy0wLjc4NywwLjc4Ny0wLjc4NywyLjA2MiwwLDIuODQ5YzAuMzkzLDAuMzk0LDAuOTA5LDAuNTksMS40MjQsMC41OSAgIGMwLjUxNiwwLDEuMDMxLTAuMTk2LDEuNDI0LTAuNTlsMjguNTQxLTI4LjU0MWwyOC41NDEsMjguNTQxYzAuMzk0LDAuMzk0LDAuOTA5LDAuNTksMS40MjQsMC41OWMwLjUxNSwwLDEuMDMxLTAuMTk2LDEuNDI0LTAuNTkgICBjMC43ODctMC43ODcsMC43ODctMi4wNjIsMC0yLjg0OUwzNS4wNjQsMzEuNzg2TDYzLjQxLDMuNDM4YzAuNzg3LTAuNzg3LDAuNzg3LTIuMDYyLDAtMi44NDljLTAuNzg3LTAuNzg2LTIuMDYyLTAuNzg2LTIuODQ4LDAgICBMMzIuMDAzLDI5LjE1TDMuNDQxLDAuNTljLTAuNzg3LTAuNzg2LTIuMDYxLTAuNzg2LTIuODQ4LDBjLTAuNzg3LDAuNzg3LTAuNzg3LDIuMDYyLDAsMi44NDlMMjguOTQxLDMxLjc4NnoiLz4KICA8L2c+Cjwvc3ZnPgo=),auto';
 
     function barsClick() {
-        navbarBars.css('pointer-events', 'none');
+        navbarBarsParent.css('pointer-events', 'none');
         setTimeout(() => {
-            navbarBars.css('pointer-events', 'auto');
+            navbarBarsParent.css('pointer-events', 'auto');
         }, 400);
         navBarbrand.removeClass('closed');
-        navbartogglerParent.animate({
-            width: '400'
-        });
-        navbarBars.addClass('clicked animate__animated animate__heartBeat');
+        navbartogglerParent.addClass('active');
         navbarOverlay.fadeIn();
         navbarInfo.css('transform', 'translateX(0px)');
         navbarInfo.css('cursor', 'default');
@@ -68,14 +69,11 @@ $(document).ready(function() {
 
     function barsClickClosed() {
         navBarbrand.addClass('closed');
-        navbartogglerParent.animate({
-            width: '94'
-        });
-        navbarBars.removeClass('clicked animate__animated animate__heartBeat');
-        navbarOverlay.fadeOut();
+        navbartogglerParent.removeClass('active');
         navbarInfo.css('transform', 'translateX(-100px)');
+        navbarOverlay.fadeOut();
         body.css('cursor', 'default');
     }
-    // Animation
-    AOS.init();
+
+    AOS.init({ disable: 'phone', });
 });

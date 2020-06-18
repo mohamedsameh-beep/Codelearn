@@ -25,6 +25,7 @@
             .logo {
                 .navbar-brand {
                     margin-right: 0;
+                    text-transform: capitalize;
                     padding: 0px;
                     color: $blueColor;
                     font-weight: 700;
@@ -92,6 +93,9 @@
                 }
             }
         }
+    }
+    .sfsi_wicons:first-of-type {
+        margin-left: 0 !important;
     }
     .copyright {
         padding-top: 40px;

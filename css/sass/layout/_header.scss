@@ -2,74 +2,70 @@
 
 nav {
     width: 100%;
+    min-height: 80px;
     @include prefixer(box-shadow, 0 4px 6px 0 rgba(12, 0, 46, .05), webkit moz ms);
     background-color: #fff!important;
     padding: 0 !important;
-    @include prefixer(transition, all .2s linear, webkit moz o ms);
+    transition: all .2s linear;
     .navbar-item {
         position: absolute;
         display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
         .navbar-toggler-parent {
             cursor: default;
             max-width: 383px;
-            padding: 15px 0 15px 20px;
+            padding: 0px 20px 0 10px;
             width: 94px;
             background-color: #fff;
             z-index: 3000;
-            @media (max-width: 576px) {
-                padding: 15px 0 12px 10px;
+            &.active {
+                width: 400px;
             }
             .navbar-toggle {
-                background-color: transparent;
-                border: none;
-                position: relative;
-                padding: 13px;
-                z-index: 9999;
-                span {
-                    &.navbar-bars {
-                        cursor: pointer;
-                        display: block;
-                        height: 22px;
-                        margin: 0px;
-                        position: relative;
-                        transition: .5s ease-in-out;
-                        width: 28px;
-                        &.clicked {
-                            height: 30px;
-                            span {
-                                &:nth-child(1) {
-                                    @include prefixer(transform, rotate(45deg), webkit moz o ms);
-                                    top: 15px !important;
-                                }
-                                &:nth-child(2) {
-                                    display: none;
-                                }
-                                &:nth-child(3) {
-                                    @include prefixer(transform, rotate(-45deg), webkit moz o ms);
-                                    top: 15px !important;
-                                }
-                            }
-                        }
-                        span {
-                            @include prefixer(transition, .4s ease-in-out, webkit moz o ms);
-                            background: $blueColor;
-                            border-radius: 9px;
-                            display: block;
-                            height: 3px;
-                            left: 0;
-                            position: absolute;
-                            width: 100%;
-                            top: 0;
-                            &:nth-child(2) {
-                                top: 10px;
-                            }
-                            &:nth-child(3) {
-                                top: 20px;
-                            }
-                        }
-                    }
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent;
+                transition: transform 400ms;
+                @include prefixer(user-select, none, webkit moz ms o);
+                height: 80px;
+                @media (max-width: 768px) {
+                    width: 70px !important;
+                }
+                @media (max-width: 576px) {
+                    width: 60px !important;
+                }
+                &.active {
+                    transform: rotate(45deg);
+                }
+                .line {
+                    fill: none;
+                    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+                    stroke: #000;
+                    stroke-width: 3;
+                    stroke-linecap: round;
+                }
+                .top {
+                    stroke-dasharray: 40 160;
+                }
+                .middle {
+                    stroke-dasharray: 40 142;
+                    transform-origin: 50%;
+                    transition: transform 400ms;
+                }
+                .bottom {
+                    stroke-dasharray: 40 85;
+                    transform-origin: 50%;
+                    transition: transform 400ms, stroke-dashoffset 400ms;
+                }
+                &.active .top {
+                    stroke-dashoffset: -64px;
+                }
+                &.active .middle {
+                    //stroke-dashoffset: -20px;
+                    transform: rotate(90deg);
+                }
+                &.active .bottom {
+                    stroke-dashoffset: -64px;
                 }
             }
         }
@@ -121,6 +117,16 @@ nav {
             @media (max-width: 768px) {
                 padding-right: 15px;
             }
+        }
+        .search {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            height: 100%;
+            padding: 16px 30px 16px 0;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
         }
         .navbar-menu {
             &.opened {
@@ -186,17 +192,15 @@ nav {
                     }
                     .nav-item {
                         margin-bottom: 10px;
-                        .nav-link {
+                        list-style: none;
+                        &>a {
                             color: $blueColor;
                             padding: 0;
                             &:hover {
                                 color: $redColor;
+                                text-decoration: none;
                             }
                         }
-                    }
-                    select {
-                        max-width: 150px;
-                        margin: 0 0 30px;
                     }
                 }
             }
