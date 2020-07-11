@@ -164,6 +164,4 @@ jQuery(document).ready(function($) {
         navbarOverlay.fadeOut();
         body.css('cursor', 'default');
     }
-
-
 });
