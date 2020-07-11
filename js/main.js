@@ -5,23 +5,113 @@ jQuery(document).ready(function($) {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
-    // Owl Carousal
-    let owl = $('.owl-carousel-homepage');
-    owl.owlCarousel({
-        animateOut: 'fadeOut',
+
+    history.replaceState(null, null, ' ');
+    var navbarHeight = $('nav.navbar').innerHeight();
+
+    $('a[href*="#"]')
+        // Remove links that don't actually link to anything
+        .not('[href="#"]')
+        .not('[href="#0"]')
+        .click(function(event) {
+            // On-page links
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                location.hostname == this.hostname
+            ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                    // Only prevent default if animation is actually gonna happen
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - navbarHeight
+                    }, 1000, function() {
+                        // Callback after animation
+                        // Must change focus!
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { // Checking if the target was focused
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                            $target.focus(); // Set focus again
+                        };
+                    });
+                }
+            }
+        });
+    $('.owl-carousel-homepage-slider1').owlCarousel({
         items: 1,
-        loop: true,
         margin: 10,
+        lazyLoad: true,
         autoplay: true,
+        autoHeight: true,
         autoplayTimeout: 5000,
-        autoplayHoverPause: true
+        autoplayHoverPause: true,
+        mouseDrag: true
+    });
+    let owl = $('.owl-carousel-homepage-slider2');
+    owl.owlCarousel({
+        items: 1,
+        margin: 10,
+        lazyLoad: true,
+        smartSpeed: 450,
+        autoplay: true,
+        autoHeight: true,
+        autoplaySpeed: 800,
+        autoplayTimeout: 7000,
+        autoplayHoverPause: true,
+        loop: false,
+        startPosition: 'URLHash',
+    });
+    owl.on('changed.owl.carousel', function(property) {
+        var current = property.item.index;
+        window.location.hash = current + 1;
+        history.replaceState(null, null, ' ');
+    });
+    $('a[href*="#faqs"]').click(function(e) {
+        var isScrolling,
+            scrolltop,
+            playOwl;
+        e.stopPropagation();
+        owl.trigger('stop.owl.autoplay');
+        var hash = $(this).data('faqs');
+        var elementHash = $('.faqs-one').find('[data-h="' + hash + '"]');
+        // Listen for scroll events
+        window.addEventListener('scroll', function scrolling(event) {
+            // Clear our timeout throughout the scroll
+            window.clearTimeout(isScrolling);
+            window.clearTimeout(playOwl);
+            // Set a timeout to run after scrolling ends
+            isScrolling = setTimeout(function() {
+                // Run the callback
+                owl.trigger('to.owl.carousel', [elementHash.parent().index(), 800]);
+                window.removeEventListener("scroll", scrolling);
+                playOwl = setTimeout(() => {
+                    owl.trigger('play.owl.autoplay');
+                }, 1000);
+            }, 66);
+        }, false);
     });
 
     // FAQs sectiton hide and show panel
+    // FAQs sectiton hide and show panel
     let buttonslide = $('.faqs-one .btns button');
     buttonslide.on('click', function() {
-        $(this).toggleClass('active');
-        $(this).next().toggleClass('active');
+        var faqs = setTimeout(() => {
+            $(this).toggleClass('active');
+            $(this).next().toggleClass('active');
+        }, 100);
+        var heightowlcarousel = setTimeout(() => {
+            $('.faqs-one .owl-stage-outer.owl-height').height($('.faqs-one .owl-item.active').height());
+        }, 350);
+        setTimeout(() => {
+            window.clearTimeout(heightowlcarousel);
+            window.clearTimeout(faqs);
+        }, 355);
     });
     // Prevent navbarToggle and navbarInfo when click it, not execute 2 functions together
     let navInfoAndToggle = $('nav .navbar-menu .navbar-info, nav .navbar-toggler-parent');
@@ -34,17 +124,17 @@ jQuery(document).ready(function($) {
     let body = $('body, html');
     body.on('click', function() {
         barsClickClosed();
-        navbarToggle.removeClass('active');
+        navbarToggle.addClass('active');
     });
     // When click on navBar toggle execute func
     let navbarBarsParent = $('button.navbar-toggle'),
         navbarToggle = $('nav .navbar-toggle');
     navbarToggle.on('click', function() {
-        if (navbarToggle.hasClass('active')) {
-            navbarToggle.removeClass('active');
+        if (!navbarToggle.hasClass('active')) {
+            navbarToggle.addClass('active');
             barsClickClosed();
         } else {
-            navbarToggle.addClass('active');
+            navbarToggle.removeClass('active');
             barsClick();
         }
     });
@@ -75,5 +165,5 @@ jQuery(document).ready(function($) {
         body.css('cursor', 'default');
     }
 
-    AOS.init({ disable: 'phone', });
+
 });
