@@ -1472,6 +1472,11 @@ body.trial .start-trial {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 576px) {
+  body.trial .start-trial {
+    min-height: auto;
+  }
+}
 body.trial .start-trial .start-trial-container .progressbar ul {
   width: 380px;
   display: flex;
@@ -1556,12 +1561,23 @@ body.trial .start-trial .start-trial-container fieldset .head-content h2 {
   color: #333;
   margin-top: 30px;
 }
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .head-content h1,
+body.trial .start-trial .start-trial-container fieldset .head-content h2 {
+    font-size: 29px;
+  }
+}
 body.trial .start-trial .start-trial-container fieldset .head-content h2 {
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
   text-align: left;
   margin: 25px 0 20px 0;
+}
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .head-content h2 {
+    font-size: 22px;
+  }
 }
 body.trial .start-trial .start-trial-container fieldset .head-content p {
   font-style: normal;
@@ -1572,6 +1588,11 @@ body.trial .start-trial .start-trial-container fieldset .head-content p {
   color: #828282;
   text-align: left;
   margin-bottom: 25px;
+}
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .head-content p {
+    font-size: 15px;
+  }
 }
 body.trial .start-trial .start-trial-container fieldset .radiobtn {
   margin-bottom: 20px;
@@ -1640,6 +1661,9 @@ body.trial .start-trial .start-trial-container fieldset .checkbox input {
 }
 body.trial .start-trial .start-trial-container fieldset .checkbox label {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 0px;
   cursor: pointer;
   font-style: normal;
@@ -1653,11 +1677,19 @@ body.trial .start-trial .start-trial-container fieldset .checkbox label {
   -ms-user-select: none;
   user-select: none;
   width: 100%;
-  text-align: center;
 }
 body.trial .start-trial .start-trial-container fieldset .checkbox label:hover input ~ .checkmark,
 body.trial .start-trial .start-trial-container fieldset .checkbox label input:focus ~ .checkmark {
   background: #ccc;
+}
+body.trial .start-trial .start-trial-container fieldset .checkbox label p {
+  display: inline-block;
+  margin: 3px 0 0 10px;
+}
+@media (max-widtH: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .checkbox label p {
+    font-size: 14px;
+  }
 }
 body.trial .start-trial .start-trial-container fieldset .checkbox label input:checked ~ .checkmark:after {
   display: block;
@@ -1667,7 +1699,8 @@ body.trial .start-trial .start-trial-container fieldset .checkbox label input:ch
   border-color: #2F80ED;
 }
 body.trial .start-trial .start-trial-container fieldset .checkbox .checkmark {
-  position: absolute;
+  display: inline-block;
+  position: relative;
   top: 2px;
   left: 0;
   height: 18px;
@@ -1913,6 +1946,7 @@ body.trial .start-trial .start-trial-container .first-stage fieldset:last-of-typ
 }
 body.trial .start-trial .start-trial-container .first-stage fieldset.form {
   max-width: 460px;
+  width: 100%;
   margin: auto;
   background-color: #fff;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
@@ -1923,6 +1957,11 @@ body.trial .start-trial .start-trial-container .first-stage fieldset.form .input
 }
 body.trial .start-trial .start-trial-container .first-stage fieldset.form .input-100 input::placeholder {
   font-size: 16px;
+}
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container .first-stage fieldset.form .input-100 input::placeholder {
+    font-size: 14px;
+  }
 }
 body.trial .start-trial .start-trial-container .first-stage fieldset.form .chart {
   background: #FFFFFF;

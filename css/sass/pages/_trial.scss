@@ -14,6 +14,9 @@ body.trial {
         min-height: 946px;
         justify-content: center;
         align-items: center;
+        @media (max-width: 576px) {
+            min-height: auto;
+        }
         .start-trial-container {
             .progressbar {
                 ul {
@@ -100,6 +103,9 @@ body.trial {
                         width: 100%;
                         color: #333;
                         margin-top: 30px;
+                        @media (max-width: 576px) {
+                            font-size: 29px
+                        }
                     }
                     h2 {
                         font-weight: 500;
@@ -107,6 +113,9 @@ body.trial {
                         line-height: 28px;
                         text-align: left;
                         margin: 25px 0 20px 0;
+                        @media (max-width: 576px) {
+                            font-size: 22px
+                        }
                     }
                     p {
                         font-style: normal;
@@ -117,6 +126,9 @@ body.trial {
                         color: #828282;
                         text-align: left;
                         margin-bottom: 25px;
+                        @media (max-width: 576px) {
+                            font-size: 15px
+                        }
                     }
                 }
                 .radiobtn {
@@ -185,6 +197,9 @@ body.trial {
                     }
                     label {
                         position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         margin-bottom: 0px;
                         cursor: pointer;
                         font-style: normal;
@@ -198,10 +213,16 @@ body.trial {
                         -ms-user-select: none;
                         user-select: none;
                         width: 100%;
-                        text-align: center;
                         &:hover input~.checkmark,
                         input:focus~.checkmark {
                             background: #ccc;
+                        }
+                        p {
+                            display: inline-block;
+                            margin: 3px 0 0 10px;
+                            @media (max-widtH: 576px) {
+                                font-size: 14px;
+                            }
                         }
                         input {
                             &:checked {
@@ -216,7 +237,8 @@ body.trial {
                         }
                     }
                     .checkmark {
-                        position: absolute;
+                        display: inline-block;
+                        position: relative;
                         top: 2px;
                         left: 0;
                         height: 18px;
@@ -481,6 +503,7 @@ body.trial {
                 }
                 fieldset.form {
                     max-width: 460px;
+                    width: 100%;
                     margin: auto;
                     background-color: #fff;
                     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
@@ -489,6 +512,9 @@ body.trial {
                         margin-bottom: 40px;
                         input::placeholder {
                             font-size: 16px;
+                            @media (max-width: 576px) {
+                                font-size: 14px
+                            }
                         }
                     }
                     .chart {
