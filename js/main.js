@@ -1,16 +1,6 @@
 jQuery(document).ready(function($) {
     'use strict';
-    // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
-    // backgroundColor: [
-    //     '#00FFDB',
-    //     '#387DFD',
-    //     '#00FFDB',
-    //     '#FF5A4E',
-    //     '#00FFDB',
-    //     '#387DFD',
-    //     '#387DFD',
-    //     '#FF5A4E',
-    // ],
+
     var ctx = document.getElementById('myChart');
     if (ctx) {
 
@@ -19,54 +9,101 @@ jQuery(document).ready(function($) {
             data: {
                 datasets: [{
                     label: 'first',
-                    data: [10, 20, 30, 40],
+                    data: [0, 0, 13, 15, 0, 8, 0, 13, 0, 0],
+                    showLine: true,
                     backgroundColor: [
-                        // '#00FFDB',
-                        // '#387DFD',
-                        // '#00FFDB',
-                        // '#FF5A4E',
+                        '',
+                        '',
+                        '#387DFD',
                         '#00FFDB',
+                        '',
+                        '#00FFDB',
+                        '',
                         '#387DFD',
-                        '#387DFD',
-                        '#FF5A4E',
+                        '',
+                        '',
                     ],
                 }, {
                     label: 'second',
-                    data: [50, 60, 70, 80],
+                    barPercentage: 0.5,
+                    barThickness: 6,
+                    maxBarThickness: 8,
+                    minBarLength: 2,
+                    showLine: true,
+                    data: [0, 10, 0, 11, 0, 17, 0, 7, 0, 0],
                     backgroundColor: [
+                        '',
                         '#00FFDB',
-                        '#387DFD',
-                        '#00FFDB',
+                        '',
                         '#FF5A4E',
-                        // '#00FFDB',
-                        // '#387DFD',
-                        // '#387DFD',
-                        // '#FF5A4E',
+                        '',
+                        '#387DFD',
+                        '',
+                        '#FF5A4E',
+                        '',
+                        '',
                     ],
                     borderWidth: 1
                 }],
                 labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                options: {
-                    legend: {
-                        display: false
-                    },
-                    tooltips: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return tooltipItem.yLabel;
-                            }
-                        }
-                    },
-                    scales: {
-                        xAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-
-                }
             },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    mode: 'index',
+                    axis: 'y',
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.yLabel;
+                        }
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            fontColor: '#646464',
+                        },
+                        gridLines: {
+                            color: '#F1F4FB',
+                            lineWidth: 2
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            min: 6,
+                            max: 18,
+                            stepSize: 3,
+                            suggestedMin: 0,
+                            fontColor: '#646464',
+                            suggestedMax: 18,
+                            callback: function(label, index, labels) {
+                                if (label >= 12) {
+                                    if (label >= 10) {
+                                        return label + ':00 PM'
+                                    } else {
+                                        return '0' + label + ':00 PM'
+                                    }
+                                } else {
+                                    if (label >= 10) {
+                                        return label + ':00 AM'
+                                    } else {
+                                        return '0' + label + ':00 AM'
+                                    }
+                                }
+                            }
+                        },
+                        gridLines: {
+                            color: '#F1F4FB',
+                            lineWidth: 2,
+                        }
+                    }]
+                }
+            }
+
         });
     }
 
@@ -276,18 +313,16 @@ jQuery(document).ready(function($) {
                 //this comes from the custom easing plugin
                 easing: 'easeInOutBack'
             });
-
             if ($(".progressbar li")) {
-                $(".progressbar li").eq($("fieldset").index(current_fs)).find('span').animate({ width: "100%", }, 1000, function() {
+                $('fieldset').each(function() {
+                    $(this).find(".progressbar li").eq($("fieldset").index(current_fs)).find('span').animate({ width: "100%" }, 1000);
                     setTimeout(() => {
-                        $(".progressbar li").eq($("fieldset").index(current_fs) + 1).addClass('active');
-                        console.log($(".progressbar li").eq($("fieldset").index(current_fs) + 1).addClass('active'));
-                    }, 200);
+                        $(this).find(".progressbar li").eq($("fieldset").index(current_fs) + 1).addClass('active');
+                    }, 1200);
                 });
             }
         }
     });
-
     $(".prev-stage1").click(function() {
         if (animating) return false;
         animating = true;
@@ -321,9 +356,14 @@ jQuery(document).ready(function($) {
             //this comes from the custom easing plugin
             easing: 'easeInOutBack'
         });
-        $(".progressbar li").eq($("fieldset").index(current_fs)).removeClass('active', function() {
-            $(".progressbar li").eq($("fieldset").index(current_fs) - 1).find('span').animate({ width: "0", }, 1000);
-        });
+        if ($(".progressbar li")) {
+            $('fieldset').each(function() {
+                $(this).find(".progressbar li").eq($("fieldset").index(current_fs) - 1).find('span').animate({ width: "0", }, 1000);
+                setTimeout(() => {
+                    $(this).find(".progressbar li").eq($("fieldset").index(current_fs)).removeClass('active');
+                }, 200);
+            });
+        }
     });
 
     $(".submit").click(function() {

@@ -1472,13 +1472,6 @@ body.trial .start-trial {
   justify-content: center;
   align-items: center;
 }
-body.trial .start-trial .start-trial-container.second {
-  max-width: 460px;
-  margin: auto;
-  background-color: #fff;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
-  padding: 40px;
-}
 body.trial .start-trial .start-trial-container .progressbar ul {
   width: 380px;
   display: flex;
@@ -1520,6 +1513,7 @@ body.trial .start-trial .start-trial-container .progressbar li:after {
   display: block;
   z-index: 1;
   top: 5px;
+  left: 1px;
 }
 body.trial .start-trial .start-trial-container .progressbar li span {
   width: 0;
@@ -1539,6 +1533,11 @@ body.trial .start-trial .start-trial-container fieldset:not(:first-of-type) {
   display: none;
 }
 body.trial .start-trial .start-trial-container fieldset {
+  max-width: 460px;
+  margin: auto;
+  background-color: #fff;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
+  padding: 40px;
   position: relative;
 }
 body.trial .start-trial .start-trial-container fieldset .head-content {
@@ -1834,7 +1833,8 @@ body.trial .start-trial .start-trial-container fieldset .btns input {
   font-size: 16px;
   line-height: 24px;
 }
-body.trial .start-trial .start-trial-container fieldset .btns input.submit, body.trial .start-trial .start-trial-container fieldset .btns input.next {
+body.trial .start-trial .start-trial-container fieldset .btns .submit,
+body.trial .start-trial .start-trial-container fieldset .btns .next {
   margin-left: 8px;
   background: #27AE60;
   color: #fff;
@@ -1842,10 +1842,12 @@ body.trial .start-trial .start-trial-container fieldset .btns input.submit, body
   width: 100%;
   transition: background-color 0.3s ease-in-out;
 }
-body.trial .start-trial .start-trial-container fieldset .btns input.submit:hover, body.trial .start-trial .start-trial-container fieldset .btns input.next:hover {
+body.trial .start-trial .start-trial-container fieldset .btns .submit:hover,
+body.trial .start-trial .start-trial-container fieldset .btns .next:hover {
   background: #219351 !important;
 }
-body.trial .start-trial .start-trial-container fieldset .btns input.cancel, body.trial .start-trial .start-trial-container fieldset .btns input.prev-stage1 {
+body.trial .start-trial .start-trial-container fieldset .btns .cancel,
+body.trial .start-trial .start-trial-container fieldset .btns .prev-stage1 {
   margin-right: 8px;
   border: 1px solid #4F4F4F;
   box-sizing: border-box;
@@ -1854,7 +1856,8 @@ body.trial .start-trial .start-trial-container fieldset .btns input.cancel, body
   transition: background-color 0.3s ease-in-out;
   padding: 15px 45.15px;
 }
-body.trial .start-trial .start-trial-container fieldset .btns input.cancel:hover, body.trial .start-trial .start-trial-container fieldset .btns input.prev-stage1:hover {
+body.trial .start-trial .start-trial-container fieldset .btns .cancel:hover,
+body.trial .start-trial .start-trial-container fieldset .btns .prev-stage1:hover {
   color: #000;
   border-color: #000;
 }
@@ -1905,6 +1908,9 @@ body.trial .start-trial .start-trial-container .first-stage fieldset .quick-acce
   width: 95%;
   z-index: -1;
 }
+body.trial .start-trial .start-trial-container .first-stage fieldset:last-of-type .btns {
+  margin-bottom: 0 !important;
+}
 body.trial .start-trial .start-trial-container .first-stage fieldset.form {
   max-width: 460px;
   margin: auto;
@@ -1922,7 +1928,7 @@ body.trial .start-trial .start-trial-container .first-stage fieldset.form .chart
   background: #FFFFFF;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
   border-radius: 3px;
-  padding: 16px 0 0 16px;
+  padding: 16px 16px 30px 24px;
   margin-bottom: 40px;
 }
 body.trial .start-trial .start-trial-container .first-stage fieldset.form .chart h2 {
@@ -1932,6 +1938,7 @@ body.trial .start-trial .start-trial-container .first-stage fieldset.form .chart
   line-height: 24px;
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
   color: #424242;
 }
 body.trial .start-trial .start-trial-container .first-stage fieldset.form .btns {
