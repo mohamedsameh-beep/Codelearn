@@ -1478,7 +1478,8 @@ body.trial .start-trial {
   }
 }
 body.trial .start-trial .start-trial-container .progressbar ul {
-  width: 380px;
+  max-width: 380px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1539,6 +1540,7 @@ body.trial .start-trial .start-trial-container fieldset:not(:first-of-type) {
 }
 body.trial .start-trial .start-trial-container fieldset {
   max-width: 460px;
+  width: 100%;
   margin: auto;
   background-color: #fff;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
@@ -1564,7 +1566,7 @@ body.trial .start-trial .start-trial-container fieldset .head-content h2 {
 @media (max-width: 576px) {
   body.trial .start-trial .start-trial-container fieldset .head-content h1,
 body.trial .start-trial .start-trial-container fieldset .head-content h2 {
-    font-size: 29px;
+    font-size: 30px;
   }
 }
 body.trial .start-trial .start-trial-container fieldset .head-content h2 {
@@ -1576,7 +1578,7 @@ body.trial .start-trial .start-trial-container fieldset .head-content h2 {
 }
 @media (max-width: 576px) {
   body.trial .start-trial .start-trial-container fieldset .head-content h2 {
-    font-size: 22px;
+    font-size: 19px;
   }
 }
 body.trial .start-trial .start-trial-container fieldset .head-content p {
@@ -1591,7 +1593,7 @@ body.trial .start-trial .start-trial-container fieldset .head-content p {
 }
 @media (max-width: 576px) {
   body.trial .start-trial .start-trial-container fieldset .head-content p {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 body.trial .start-trial .start-trial-container fieldset .radiobtn {
@@ -1616,6 +1618,11 @@ body.trial .start-trial .start-trial-container fieldset .radiobtn label {
   user-select: none;
   line-height: 20px;
   padding-left: 28px;
+}
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .radiobtn label {
+    font-size: 15px;
+  }
 }
 body.trial .start-trial .start-trial-container fieldset .radiobtn .checkmark {
   position: absolute;
@@ -1762,6 +1769,11 @@ body.trial .start-trial .start-trial-container fieldset .input label {
   text-transform: uppercase;
   margin: 0 0 12px 0;
 }
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .input label {
+    font-size: 10px;
+  }
+}
 body.trial .start-trial .start-trial-container fieldset .input input {
   width: 100% !important;
   padding: 12px 0;
@@ -1773,6 +1785,11 @@ body.trial .start-trial .start-trial-container fieldset .input input {
 body.trial .start-trial .start-trial-container fieldset .input input::placeholder {
   color: #BDBDBD;
   font-size: 12px;
+}
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .input input::placeholder {
+    font-size: 9px;
+  }
 }
 body.trial .start-trial .start-trial-container fieldset .input-summary-container span {
   display: block;
@@ -1826,6 +1843,11 @@ body.trial .start-trial .start-trial-container fieldset .add-another .add {
   font-size: 14px;
   cursor: pointer;
 }
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .add-another .add {
+    font-size: 11px;
+  }
+}
 body.trial .start-trial .start-trial-container fieldset .add-another p {
   margin: 0;
   font-weight: 500;
@@ -1835,6 +1857,11 @@ body.trial .start-trial .start-trial-container fieldset .add-another p {
   width: 50%;
   text-align: right;
   color: #BDBDBD;
+}
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .add-another p {
+    font-size: 11px;
+  }
 }
 body.trial .start-trial .start-trial-container fieldset .summary {
   display: flex;
@@ -1871,9 +1898,16 @@ body.trial .start-trial .start-trial-container fieldset .btns .next {
   margin-left: 8px;
   background: #27AE60;
   color: #fff;
-  padding: 15px;
+  padding: 15px 88.5px;
   width: 100%;
   transition: background-color 0.3s ease-in-out;
+}
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .btns .submit,
+body.trial .start-trial .start-trial-container fieldset .btns .next {
+    font-size: 15px;
+    padding: 15px 30px;
+  }
 }
 body.trial .start-trial .start-trial-container fieldset .btns .submit:hover,
 body.trial .start-trial .start-trial-container fieldset .btns .next:hover {
@@ -1888,11 +1922,19 @@ body.trial .start-trial .start-trial-container fieldset .btns .prev-stage1 {
   color: #4f4f4f;
   transition: background-color 0.3s ease-in-out;
   padding: 15px 45.15px;
+  width: 100%;
 }
 body.trial .start-trial .start-trial-container fieldset .btns .cancel:hover,
 body.trial .start-trial .start-trial-container fieldset .btns .prev-stage1:hover {
   color: #000;
   border-color: #000;
+}
+@media (max-width: 576px) {
+  body.trial .start-trial .start-trial-container fieldset .btns .cancel,
+body.trial .start-trial .start-trial-container fieldset .btns .prev-stage1 {
+    padding: 15px;
+    font-size: 15px;
+  }
 }
 body.trial .start-trial .start-trial-container .first-stage fieldset .head-content h1 {
   margin: 0;
