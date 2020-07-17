@@ -276,6 +276,8 @@ jQuery(document).ready(function($) {
     var left, opacity, scale; //fieldset properties which we will animate
     var animating; //flag to prevent quick multi-click glitches
     $(".next").click(function() {
+        $(this).parent().parent().next().find('.next').css('pointer-events', 'none');
+
         if (!$(this).hasClass('last')) {
 
             if (animating) return false;
@@ -318,12 +320,14 @@ jQuery(document).ready(function($) {
                     $(this).find(".progressbar li").eq($("fieldset").index(current_fs)).find('span').animate({ width: "100%" }, 1000);
                     setTimeout(() => {
                         $(this).find(".progressbar li").eq($("fieldset").index(current_fs) + 1).addClass('active');
+                        next_fs.find('.next').css('pointer-events', 'auto');
                     }, 1200);
                 });
             }
         }
     });
     $(".prev-stage1").click(function() {
+        $(this).parent().parent().prev().find('.prev-stage1').css('pointer-events', 'none');
         if (animating) return false;
         animating = true;
 
@@ -362,6 +366,9 @@ jQuery(document).ready(function($) {
                 setTimeout(() => {
                     $(this).find(".progressbar li").eq($("fieldset").index(current_fs)).removeClass('active');
                 }, 200);
+                setTimeout(() => {
+                    previous_fs.find('.prev-stage1').css('pointer-events', 'auto');
+                }, 1000);
             });
         }
     });

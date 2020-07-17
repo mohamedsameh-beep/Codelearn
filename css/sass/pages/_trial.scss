@@ -436,7 +436,7 @@ body.trial {
                         margin-left: 8px;
                         background: #27AE60;
                         color: #fff;
-                        padding: 15px 88.5px;
+                        padding: 15px;
                         width: 100%;
                         transition: background-color .3s ease-in-out;
                         @media (max-width: 576px) {
@@ -456,12 +456,12 @@ body.trial {
                         color: #4f4f4f;
                         transition: background-color .3s ease-in-out;
                         padding: 15px 45.15px;
-                        width: 100%;
                         &:hover {
                             color: #000;
                             border-color: #000
                         }
                         @media (max-width: 576px) {
+                            width: 100%;
                             padding: 15px;
                             font-size: 15px
                         }
