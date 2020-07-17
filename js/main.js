@@ -281,6 +281,7 @@ jQuery(document).ready(function($) {
                 $(".progressbar li").eq($("fieldset").index(current_fs)).find('span').animate({ width: "100%", }, 1000, function() {
                     setTimeout(() => {
                         $(".progressbar li").eq($("fieldset").index(current_fs) + 1).addClass('active');
+                        console.log($(".progressbar li").eq($("fieldset").index(current_fs) + 1).addClass('active'));
                     }, 200);
                 });
             }
