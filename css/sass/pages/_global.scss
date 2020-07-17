@@ -1,5 +1,9 @@
 /* Start Global*/
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #fcfcfc;
@@ -90,6 +94,42 @@ img {
 .owl-height {
     transition: height .3s ease-in-out !important;
     will-change: height;
+}
+
+#customBtn {
+    border-radius: 5px;
+    background: #F2F2F2;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    color: #4F4F4F;
+    padding: 10px;
+    transition: background-color .2s ease-in-out;
+    &:hover {
+        background-color: #eeeeee;
+    }
+}
+
+#customBtn:hover {
+    cursor: pointer;
+}
+
+span.icon {
+    background: url('../imgs/google.png') transparent 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+span.buttonText {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #4F4F4F;
 }
 
 

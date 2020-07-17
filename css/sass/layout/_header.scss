@@ -47,7 +47,6 @@ nav.navbar {
                     background-color: #888;
                     &+.icon-bar {
                         margin-top: 6px;
-                        margin-right: 3px;
                     }
                 }
                 .top-bar {
@@ -59,7 +58,7 @@ nav.navbar {
                 }
                 .bottom-bar {
                     transform: rotate(-45deg);
-                    transform-origin: 10% 90%;
+                    transform-origin: 6% 90%;
                 }
                 &.active {
                     .icon-bar {
