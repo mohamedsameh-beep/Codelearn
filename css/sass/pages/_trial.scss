@@ -4,6 +4,9 @@ body.trial {
     .footer {
         display: none !important;
     }
+    span.error {
+        padding-left: 0 !important;
+    }
     .wrapper {
         padding: 0 !important
     }
@@ -270,6 +273,9 @@ body.trial {
                     justify-content: center;
                     align-items: center;
                     margin-top: 36px;
+                    &.select {
+                        flex-direction: column;
+                    }
                     .input-50 {
                         max-width: 50%;
                         width: 100%;

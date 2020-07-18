@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html itemscope itemtype="http://schema.org/Article" lang="en-US">
+<html lang="en-US">
 
 <head>
     <title>Continue</title>
@@ -27,18 +27,8 @@
     <link rel="icon" href="imgs/favicon.ico" type="image/x-icon">
     <!--Google Fonts-->
     <link href="css/fonts.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Font Awsome -->
-    <link href="css/all.min.css" rel="stylesheet">
-    <!-- Owl Carousal -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <!-- Animate Css-->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" /> -->
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <!--[if lt IE 9]>
@@ -47,19 +37,6 @@
     <!--[ih lt IE 9]>
     <script type='text/javascript' src' https://oss.maxcdn.com/respond/1.4.2hrespond.min.js?ver=5.4.2'><rscript>
     <![endif]-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
-    <script>
-        function start() {
-            gapi.load('auth2', function() {
-                auth2 = gapi.auth2.init({
-                    client_id: '264999881937-vbscg6fffh78q9du4b0np5a58aifs44v.apps.googleusercontent.com',
-                    // Scopes to request in addition to 'profile' and 'email'
-                    //scope: 'additional_scope'
-                });
-            });
-        }
-    </script>
 </head>
 
 <body class="trial">
@@ -67,9 +44,9 @@
         <div class="start-trial">
             <div class="start-trial-container second">
                 <div class="container">
-                    <form action="" onsubmit="return mySubmitFunction(event)" class="form">
+                    <form action="" class="form">
                         <div class="second-stage">
-                            <fieldset data-name="products">
+                            <fieldset data-name="Products">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -96,10 +73,10 @@
                                           <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <div class="input-100">
+                                <div class="input-100 input-two">
                                     <div class="input input-50">
                                         <label for="input1-product" class="text-uppercase">Product Name*</label>
-                                        <input type="text" name="" id="input1-product" placeholder="Click to add a product">
+                                        <input type="text" name="name" id="input1-product" placeholder="Click to add a product" required>
                                     </div>
                                     <div class="input input-50">
                                         <label for="input2-product" class="text-uppercase">Product Aliases</label>
@@ -115,7 +92,7 @@
                                     <input type="button" value="Next" class="btn next">
                                 </div>
                             </fieldset>
-                            <fieldset data-name="hashtag">
+                            <fieldset data-name="Hashtag">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -145,7 +122,7 @@
                                 <div class="input-100">
                                     <div class="input">
                                         <label for="input1-hashtag" class="text-uppercase">Hashtags</label>
-                                        <input type="text" name="" id="input1-hashtag" placeholder="Click to add hashtags">
+                                        <input type="text" name="name" id="input1-hashtag" placeholder="Click to add hashtags">
                                     </div>
                                 </div>
                                 <div class="btns">
@@ -153,7 +130,7 @@
                                     <input type="button" value="Next" class="btn next">
                                 </div>
                             </fieldset>
-                            <fieldset data-name="people">
+                            <fieldset data-name="People">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -180,10 +157,10 @@
                                           <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <div class="input-100">
+                                <div class="input-100 input-two">
                                     <div class="input input-50">
                                         <label for="input1-people" class="text-uppercase">Person's Name*</label>
-                                        <input type="text" name="" id="input1-people" placeholder="Click to add names" required>
+                                        <input type="text" name="name" id="input1-people" placeholder="Click to add names" required>
                                     </div>
                                     <div class="input input-50">
                                         <label for="input2-people" class="text-uppercase">Person's twitter handle</label>
@@ -199,7 +176,7 @@
                                     <input type="button" value="Next" class="btn next">
                                 </div>
                             </fieldset>
-                            <fieldset data-name="content">
+                            <fieldset data-name="Content">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -237,7 +214,7 @@
                                     <input type="button" value="Next" class="btn next">
                                 </div>
                             </fieldset>
-                            <fieldset class="summary">
+                            <fieldset class="summary" data-name="Summary">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -294,11 +271,10 @@
         </div>
     </div>
     <!-- Start JavaScript -->
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+
     <script src="js/main.js"></script>
     <!-- End JavaScript -->
 </body>
