@@ -62,7 +62,7 @@
 /* Start Navbar */
 nav.navbar {
   width: 100%;
-  min-height: 82px;
+  min-height: 70px;
   -webkit-box-shadow: 0 2px 4px 0 rgba(12, 0, 46, 0.03);
   -moz-box-shadow: 0 2px 4px 0 rgba(12, 0, 46, 0.03);
   -ms-box-shadow: 0 2px 4px 0 rgba(12, 0, 46, 0.03);
@@ -79,14 +79,14 @@ nav.navbar .navbar-item {
 }
 nav.navbar .navbar-item .navbar-toggler-parent {
   cursor: default;
-  min-height: 82px;
+  min-height: 70px;
   max-width: 383px;
   background-color: #fff;
   z-index: 3000;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
+  width: 70px;
   will-change: width;
 }
 nav.navbar .navbar-item .navbar-toggler-parent.active {
@@ -102,8 +102,8 @@ nav.navbar .navbar-item .navbar-toggler-parent .navbar-toggle {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,10 +131,6 @@ nav.navbar .navbar-item .navbar-toggler-parent .navbar-toggle .bottom-bar {
   transform: rotate(-45deg);
   transform-origin: 6% 90%;
 }
-nav.navbar .navbar-item .navbar-toggler-parent .navbar-toggle.active .icon-bar + .icon-bar {
-  margin-top: 8px;
-  margin-right: 0;
-}
 nav.navbar .navbar-item .navbar-toggler-parent .navbar-toggle.active .top-bar {
   transform: rotate(0);
 }
@@ -151,8 +147,8 @@ nav.navbar .navbar-item .navbar-brand {
   font-weight: 700;
   outline: none !important;
   position: absolute;
-  left: 80px;
-  padding: 15px 0;
+  left: 70px;
+  padding: 10px 0;
 }
 @media (max-width: 576px) {
   nav.navbar .navbar-item .navbar-brand {
@@ -164,13 +160,13 @@ nav.navbar .navbar-item .navbar-brand.closed {
   z-index: 4000;
 }
 nav.navbar .navbar-item .navbar-brand img {
-  width: 55px;
+  width: 50px;
   height: auto;
   margin-right: 10px;
 }
 @media (max-width: 576px) {
   nav.navbar .navbar-item .navbar-brand img {
-    width: 50px;
+    width: 40px;
     margin-right: 8px;
   }
 }
@@ -192,7 +188,7 @@ nav.navbar .navbar-container .btns {
   align-items: flex-end;
   justify-content: flex-end;
   height: 100%;
-  padding: 16px 30px 16px 0;
+  padding: 13px 30px 13px 0;
   width: 100%;
 }
 @media (max-width: 768px) {
@@ -264,6 +260,43 @@ nav.navbar .navbar-container .navbar-menu .navbar-info .navbar-brand img {
 }
 nav.navbar .navbar-container .navbar-menu .navbar-info .navbar-nav {
   flex-direction: column !important;
+}
+nav.navbar .navbar-container .navbar-menu .navbar-info .navbar-nav.nav-icons {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style-type: none !important;
+  display: block !important;
+}
+nav.navbar .navbar-container .navbar-menu .navbar-info .navbar-nav.nav-icons li {
+  padding: 0 !important;
+  display: inline-block !important;
+  margin: 0 8px 8px 0 !important;
+  list-style-type: none !important;
+}
+nav.navbar .navbar-container .navbar-menu .navbar-info .navbar-nav.nav-icons li a {
+  border-radius: 2px;
+  background: #ffffff !important;
+  color: #191847;
+  font-size: 25px !important;
+  padding: 8px;
+  width: 1.2em;
+  line-height: 1.2em;
+  text-align: center;
+  display: block;
+  text-decoration: none !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+  speak: none;
+  -moz-transition: background-color 0.2s ease-in-out 0s;
+  -webkit-transition: background-color 0.2s ease-in-out 0s;
+  transition: background-color 0.2s ease-in-out 0s;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+nav.navbar .navbar-container .navbar-menu .navbar-info .navbar-nav.nav-icons li a:hover {
+  color: #ff4133 !important;
 }
 nav.navbar .navbar-container .navbar-menu .navbar-info .navbar-nav h3 {
   font-size: 14px;
@@ -464,11 +497,17 @@ span.error {
   padding: 0;
   margin: 0 !important;
   overflow: hidden;
-  padding-top: 160px;
+  padding-top: 110px;
 }
 @media (max-width: 992px) {
   .wrapper {
-    padding-top: 22%;
+    padding-top: 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
   }
 }
 
@@ -569,6 +608,8 @@ span.buttonText {
   /*End FAQs One*/
   /*Start Download*/
   /*End Download*/
+  /* Start Slider*/
+  /* End Slider*/
 }
 .home .header {
   position: relative;
@@ -1463,6 +1504,11 @@ span.buttonText {
 .home .download .container .download-img img {
   width: 100%;
   height: auto;
+}
+.home .slider3 p {
+  text-align: justify !important;
+  font-size: 16px !important;
+  max-width: 420px !important;
 }
 
 body.trial nav,

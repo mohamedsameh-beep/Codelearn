@@ -4,116 +4,9 @@ jQuery(document).ready(function($) {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
-
     history.replaceState(null, null, ' ');
-    var ctx = document.getElementById('myChart');
-    if (ctx) {
-
-        var stackedBar = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                datasets: [{
-                    label: 'first',
-                    data: [0, 0, 13, 15, 0, 8, 0, 13, 0, 0],
-                    showLine: true,
-                    backgroundColor: [
-                        '',
-                        '',
-                        '#387DFD',
-                        '#00FFDB',
-                        '',
-                        '#00FFDB',
-                        '',
-                        '#387DFD',
-                        '',
-                        '',
-                    ],
-                }, {
-                    label: 'second',
-                    barPercentage: 0.5,
-                    barThickness: 6,
-                    maxBarThickness: 8,
-                    minBarLength: 2,
-                    showLine: true,
-                    data: [0, 10, 0, 11, 0, 17, 0, 7, 0, 0],
-                    backgroundColor: [
-                        '',
-                        '#00FFDB',
-                        '',
-                        '#FF5A4E',
-                        '',
-                        '#387DFD',
-                        '',
-                        '#FF5A4E',
-                        '',
-                        '',
-                    ],
-                    borderWidth: 1
-                }],
-                labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            },
-            options: {
-                responsive: true,
-                legend: {
-                    display: false
-                },
-                tooltips: {
-                    mode: 'index',
-                    axis: 'y',
-                    callbacks: {
-                        label: function(tooltipItem) {
-                            return tooltipItem.yLabel;
-                        }
-                    }
-                },
-                scales: {
-                    xAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            fontColor: '#646464',
-                        },
-                        gridLines: {
-                            color: '#F1F4FB',
-                            lineWidth: 2
-                        }
-                    }],
-                    yAxes: [{
-                        ticks: {
-                            min: 6,
-                            max: 18,
-                            stepSize: 3,
-                            suggestedMin: 0,
-                            fontColor: '#646464',
-                            suggestedMax: 18,
-                            callback: function(label, index, labels) {
-                                if (label >= 12) {
-                                    if (label >= 10) {
-                                        return label + ':00 PM'
-                                    } else {
-                                        return '0' + label + ':00 PM'
-                                    }
-                                } else {
-                                    if (label >= 10) {
-                                        return label + ':00 AM'
-                                    } else {
-                                        return '0' + label + ':00 AM'
-                                    }
-                                }
-                            }
-                        },
-                        gridLines: {
-                            color: '#F1F4FB',
-                            lineWidth: 2,
-                        }
-                    }]
-                }
-            }
-
-        });
-    }
-    var navbarHeight = $('nav.navbar').innerHeight();
     if (!$('body').hasClass('trial')) {
-
+        var navbarHeight = $('nav.navbar').innerHeight();
         $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
             // On-page links
             if (
@@ -197,7 +90,6 @@ jQuery(document).ready(function($) {
                 }, 66);
             }, false);
         });
-
         // FAQs sectiton hide and show panel
         // FAQs sectiton hide and show panel
         let buttonslide = $('.faqs-one .btns button');
@@ -265,180 +157,277 @@ jQuery(document).ready(function($) {
             navbarOverlay.fadeOut();
             body.css('cursor', 'default');
         }
-    }
-
-    function phonenumber(inputtxt) {
-        if (inputtxt) {
-            var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-            if (inputtxt.match(phoneno)) {
-                return true;
-            } else {
-                if (inputtxt.length < 10) {
-                    $('#phoneNumber-error').css('display', 'block');
-                    $('#phoneNumber-error').text('Phone Number Can\'t be less than 10 numbers');
-                    return false;
-                } else {
-                    $('#phoneNumber-error').css('display', 'block');
-                    $('#phoneNumber-error').text('Please Enter a valid number');
-                    return false;
-                }
-            }
-        } else {
-            return true;
-        }
-    }
-    $('input.phoneNumber').on('keyup', function() {
-        if ($(this).val() !== '') {
-            var phoneno = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-            if ($(this).val().match(phoneno)) {
-                return true;
-            } else {
-                if ($(this).val().length < 10) {
-                    $('#phoneNumber-error').css('display', 'block');
-                    $('#phoneNumber-error').text('Phone Number Can\'t be less than 10 numbers');
-                    return false;
-                } else {
-                    $('#phoneNumber-error').css('display', 'block');
-                    $('#phoneNumber-error').text('Please Enter a valid number');
-                    return false;
-                }
-            }
-        } else {
-            return true;
-        }
-    });
-    var v = $("form").validate({
-        rules: {
-            name: {
-                required: true
-            },
-            company: {
-                required: true
-            },
-            email: {
-                required: true,
-                email: true
-            }
-        },
-        errorElement: "span",
-        errorClass: "error",
-        errorPlacement: function(error, element) {
-            error.insertAfter(element);
-            $('.input.selectbox span.error').insertAfter($('.input.selectbox span.error').parent());
-            $('.input-two span.error').insertAfter($('.input-two span.error').parent().parent());
-        }
-    });
-    //jQuery time
-    var current_fs, next_fs, previous_fs; //fieldsets
-    var left, opacity, scale; //fieldset properties which we will animate
-    var animating; //flag to prevent quick multi-click glitches
-    $(".next").click(function() {
-        if (phonenumber($('input.phoneNumber').val()) && v.form()) {
-
-            $(this).parent().parent().next().find('.next').css('pointer-events', 'none');
-
-            if (!$(this).hasClass('last')) {
-
-                if (animating) return false;
-                animating = true;
-
-                current_fs = $(this).parent().parent();
-                next_fs = $(this).parent().parent().next();
-
-                //activate next step on progressbar using the index of next_fs
-                // $(".progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
-                //show the next fieldset
-                next_fs.show();
-                //hide the current fieldset with style
-                current_fs.animate({ opacity: 0 }, {
-                    step: function(now, mx) {
-                        //as the opacity of current_fs reduces to 0 - stored in "now"
-                        //1. scale current_fs down to 80%
-                        scale = 1 - (1 - now) * 0.2;
-                        //2. bring next_fs from the right(50%)
-                        left = (now * 50) + "%";
-                        //3. increase opacity of next_fs to 1 as it moves in
-                        opacity = 1 - now;
-                        current_fs.css({
-                            'transform': 'scale(' + scale + ')',
-                            'position': 'absolute'
-                        });
-                        next_fs.css({ 'left': left, 'opacity': opacity });
+    } else {
+        var ctx = document.getElementById('myChart');
+        if (ctx) {
+            var stackedBar = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    datasets: [{
+                        label: 'first',
+                        data: [0, 0, 13, 15, 0, 8, 0, 13, 0, 0],
+                        showLine: true,
+                        backgroundColor: [
+                            '',
+                            '',
+                            '#387DFD',
+                            '#00FFDB',
+                            '',
+                            '#00FFDB',
+                            '',
+                            '#387DFD',
+                            '',
+                            '',
+                        ],
+                    }, {
+                        label: 'second',
+                        barPercentage: 0.5,
+                        barThickness: 6,
+                        maxBarThickness: 8,
+                        minBarLength: 2,
+                        showLine: true,
+                        data: [0, 10, 0, 11, 0, 17, 0, 7, 0, 0],
+                        backgroundColor: [
+                            '',
+                            '#00FFDB',
+                            '',
+                            '#FF5A4E',
+                            '',
+                            '#387DFD',
+                            '',
+                            '#FF5A4E',
+                            '',
+                            '',
+                        ],
+                        borderWidth: 1
+                    }],
+                    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false
                     },
-                    duration: 800,
-                    complete: function() {
-                        current_fs.hide();
-                        animating = false;
+                    tooltips: {
+                        mode: 'index',
+                        axis: 'y',
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.yLabel;
+                            }
+                        }
                     },
-                    //this comes from the custom easing plugin
-                    easing: 'easeInOutBack'
-                });
-                if ($(".progressbar li")) {
-                    $('fieldset').each(function() {
-                        $(this).find(".progressbar li").eq($("fieldset").index(current_fs)).find('span').animate({ width: "100%" }, 1000);
-                        setTimeout(() => {
-                            $(this).find(".progressbar li").eq($("fieldset").index(current_fs) + 1).addClass('active');
-                            next_fs.find('.next').css('pointer-events', 'auto');
-                        }, 1200);
-                    });
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                fontColor: '#646464',
+                            },
+                            gridLines: {
+                                color: '#F1F4FB',
+                                lineWidth: 2
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                min: 6,
+                                max: 18,
+                                stepSize: 3,
+                                suggestedMin: 0,
+                                fontColor: '#646464',
+                                suggestedMax: 18,
+                                callback: function(label, index, labels) {
+                                    if (label >= 12) {
+                                        if (label >= 10) {
+                                            return label + ':00 PM'
+                                        } else {
+                                            return '0' + label + ':00 PM'
+                                        }
+                                    } else {
+                                        if (label >= 10) {
+                                            return label + ':00 AM'
+                                        } else {
+                                            return '0' + label + ':00 AM'
+                                        }
+                                    }
+                                }
+                            },
+                            gridLines: {
+                                color: '#F1F4FB',
+                                lineWidth: 2,
+                            }
+                        }]
+                    }
                 }
-                document.title = next_fs.data('name');
-            }
-        }
-    });
-    $(".prev-stage1").click(function() {
-        $(this).parent().parent().prev().find('.prev-stage1').css('pointer-events', 'none');
-        if (animating) return false;
-        animating = true;
 
-        current_fs = $(this).parent().parent();
-        previous_fs = $(this).parent().parent().prev();
-
-        //de-activate current step on progressbar
-
-        //show the previous fieldset
-        previous_fs.show();
-        //hide the current fieldset with style
-        current_fs.animate({ opacity: 0 }, {
-            step: function(now, mx) {
-                //as the opacity of current_fs reduces to 0 - stored in "now"
-                //1. scale previous_fs from 80% to 100%
-                scale = 0.8 + (1 - now) * 0.2;
-                //2. take current_fs to the right(50%) - from 0%
-                left = ((1 - now) * 50) + "%";
-                //3. increase opacity of previous_fs to 1 as it moves in
-                opacity = 1 - now;
-                current_fs.css({ 'left': left });
-                previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
-            },
-            duration: 800,
-            complete: function() {
-                current_fs.hide();
-                animating = false;
-                previous_fs.css({ 'position': 'relative' });
-            },
-            //this comes from the custom easing plugin
-            easing: 'easeInOutBack'
-        });
-        if ($(".progressbar li")) {
-            $('fieldset').each(function() {
-                $(this).find(".progressbar li").eq($("fieldset").index(current_fs) - 1).find('span').animate({ width: "0", }, 1000);
-                setTimeout(() => {
-                    $(this).find(".progressbar li").eq($("fieldset").index(current_fs)).removeClass('active');
-                }, 200);
-                setTimeout(() => {
-                    previous_fs.find('.prev-stage1').css('pointer-events', 'auto');
-                }, 1000);
             });
         }
-        document.title = previous_fs.data('name');
-    });
+        // Restricts input for the set of matched elements to the given inputFilter function.
+        $.fn.inputFilter = function(inputFilter) {
+            return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+                if (inputFilter(this.value)) {
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                } else if (this.hasOwnProperty("oldValue")) {
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                } else {
+                    this.value = "";
+                }
+            });
+        };
+        $("input.phoneNumber").inputFilter(function(value) {
+            return /^\d*$/.test(value);
+        });
+        $('input.phoneNumber').on('keyup', function() {
+            if ($(this).val().length >= 3) {
+                $(this).parent().find('select option').each(function() {
+                    if ($('input.phoneNumber').val().startsWith($(this).val())) {
+                        $("input.phoneNumber").parent().find('select').val($(this).val());
+                        return false;
+                    }
+                });
+            } else {
+                return false;
+            }
+        });
+        $('input').on('keyup', function() {
+            v.form();
+        });
+        var v = $("form").validate({
+            rules: {
+                name: {
+                    required: true
+                },
+                company: {
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            errorElement: "span",
+            errorClass: "error",
+            errorPlacement: function(error, element) {
+                error.insertAfter(element);
+                $('.input.selectbox span.error').insertAfter($('.input.selectbox span.error').parent());
+                $('.input-two span.error').insertAfter($('.input-two span.error').parent().parent());
+            }
+        });
+        //jQuery time
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var left, opacity, scale; //fieldset properties which we will animate
+        var animating; //flag to prevent quick multi-click glitches
+        $(".next").click(function() {
+            if (v.form()) {
 
-    $(".submit").click(function() {
-        return false;
-    });
-    $('.selectbox select').on('change', function() {
-        $(this).parent().find('input').attr('placeholder', '+ ' + $(this).find('option:selected').val() + ' Telephone');
-    });
+                $(this).parent().parent().next().find('.next').css('pointer-events', 'none');
+
+                if (!$(this).hasClass('last')) {
+
+                    if (animating) return false;
+                    animating = true;
+
+                    current_fs = $(this).parent().parent();
+                    next_fs = $(this).parent().parent().next();
+
+                    //activate next step on progressbar using the index of next_fs
+                    // $(".progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+                    //show the next fieldset
+                    next_fs.show();
+                    //hide the current fieldset with style
+                    current_fs.animate({ opacity: 0 }, {
+                        step: function(now, mx) {
+                            //as the opacity of current_fs reduces to 0 - stored in "now"
+                            //1. scale current_fs down to 80%
+                            scale = 1 - (1 - now) * 0.2;
+                            //2. bring next_fs from the right(50%)
+                            left = (now * 50) + "%";
+                            //3. increase opacity of next_fs to 1 as it moves in
+                            opacity = 1 - now;
+                            current_fs.css({
+                                'transform': 'scale(' + scale + ')',
+                                'position': 'absolute'
+                            });
+                            next_fs.css({ 'left': left, 'opacity': opacity });
+                        },
+                        duration: 800,
+                        complete: function() {
+                            current_fs.hide();
+                            animating = false;
+                        },
+                        //this comes from the custom easing plugin
+                        easing: 'easeInOutBack'
+                    });
+                    if ($(".progressbar li")) {
+                        $('fieldset').each(function() {
+                            $(this).find(".progressbar li").eq($("fieldset").index(current_fs)).find('span').animate({ width: "100%" }, 1000);
+                            setTimeout(() => {
+                                $(this).find(".progressbar li").eq($("fieldset").index(current_fs) + 1).addClass('active');
+                                next_fs.find('.next').css('pointer-events', 'auto');
+                            }, 1200);
+                        });
+                    }
+                    document.title = next_fs.data('name');
+                }
+            }
+        });
+        $(".prev-stage1").click(function() {
+            $(this).parent().parent().prev().find('.prev-stage1').css('pointer-events', 'none');
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent().parent();
+            previous_fs = $(this).parent().parent().prev();
+
+            //de-activate current step on progressbar
+
+            //show the previous fieldset
+            previous_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({ opacity: 0 }, {
+                step: function(now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale previous_fs from 80% to 100%
+                    scale = 0.8 + (1 - now) * 0.2;
+                    //2. take current_fs to the right(50%) - from 0%
+                    left = ((1 - now) * 50) + "%";
+                    //3. increase opacity of previous_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({ 'left': left });
+                    previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
+                },
+                duration: 800,
+                complete: function() {
+                    current_fs.hide();
+                    animating = false;
+                    previous_fs.css({ 'position': 'relative' });
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+            if ($(".progressbar li")) {
+                $('fieldset').each(function() {
+                    $(this).find(".progressbar li").eq($("fieldset").index(current_fs) - 1).find('span').animate({ width: "0", }, 1000);
+                    setTimeout(() => {
+                        $(this).find(".progressbar li").eq($("fieldset").index(current_fs)).removeClass('active');
+                    }, 200);
+                    setTimeout(() => {
+                        previous_fs.find('.prev-stage1').css('pointer-events', 'auto');
+                    }, 1000);
+                });
+            }
+            document.title = previous_fs.data('name');
+        });
+        $(".submit").click(function() {
+            return false;
+        });
+        $('.selectbox select').on('change', function() {
+            $(this).parent().find('input').attr('placeholder', '+ ' + $(this).find('option:selected').val() + ' Telephone');
+            $(this).parent().find('input').val($(this).find('option:selected').val());
+        });
+    }
 });

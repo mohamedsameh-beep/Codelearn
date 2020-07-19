@@ -39,9 +39,15 @@ span.error {
     padding: 0;
     margin: 0!important;
     overflow: hidden;
-    padding-top: 160px;
+    padding-top: 110px;
     @media (max-width: 992px) {
-        padding-top: 22%;
+        padding-top: 20%;
+    }
+}
+
+.container {
+    @media (min-width: 1200px) {
+        max-width: 1200px;
     }
 }
 

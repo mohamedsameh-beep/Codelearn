@@ -2,7 +2,7 @@
 
 nav.navbar {
     width: 100%;
-    min-height: 82px;
+    min-height: 70px;
     @include prefixer(box-shadow, 0 2px 4px 0 rgba(12, 0, 46, 0.03), webkit moz ms);
     background-color: #fff!important;
     padding: 0 !important;
@@ -14,14 +14,14 @@ nav.navbar {
         justify-content: center;
         .navbar-toggler-parent {
             cursor: default;
-            min-height: 82px;
+            min-height: 70px;
             max-width: 383px;
             background-color: #fff;
             z-index: 3000;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 80px;
+            width: 70px;
             will-change: width;
             &.active {
                 width: 400px;
@@ -32,8 +32,8 @@ nav.navbar {
                 -webkit-tap-highlight-color: transparent;
                 transition: transform 400ms;
                 @include prefixer(user-select, none, webkit moz ms o);
-                height: 80px;
-                width: 80px;
+                height: 70px;
+                width: 70px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -61,12 +61,6 @@ nav.navbar {
                     transform-origin: 6% 90%;
                 }
                 &.active {
-                    .icon-bar {
-                        &+.icon-bar {
-                            margin-top: 8px;
-                            margin-right: 0;
-                        }
-                    }
                     .top-bar {
                         transform: rotate(0);
                     }
@@ -86,8 +80,8 @@ nav.navbar {
             font-weight: 700;
             outline: none !important;
             position: absolute;
-            left: 80px;
-            padding: 15px 0;
+            left: 70px;
+            padding: 10px 0;
             @media (max-width: 576px) {
                 padding: 19px 0;
                 left: 70px;
@@ -96,11 +90,11 @@ nav.navbar {
                 z-index: 4000;
             }
             img {
-                width: 55px;
+                width: 50px;
                 height: auto;
                 margin-right: 10px;
                 @media(max-width: 576px) {
-                    width: 50px;
+                    width: 40px;
                     margin-right: 8px;
                 }
             }
@@ -123,7 +117,7 @@ nav.navbar {
             align-items: flex-end;
             justify-content: flex-end;
             height: 100%;
-            padding: 16px 30px 16px 0;
+            padding: 13px 30px 13px 0;
             width: 100%;
             @media (max-width: 768px) {
                 padding-right: 15px;
@@ -193,6 +187,43 @@ nav.navbar {
                 }
                 .navbar-nav {
                     flex-direction: column !important;
+                    &.nav-icons {
+                        margin: 0!important;
+                        padding: 0!important;
+                        list-style-type: none!important;
+                        display: block!important;
+                        li {
+                            padding: 0!important;
+                            display: inline-block!important;
+                            margin: 0 8px 8px 0!important;
+                            list-style-type: none!important;
+                            a {
+                                border-radius: 2px;
+                                background: #ffffff!important;
+                                color: $blueColor;
+                                font-size: 25px!important;
+                                padding: 8px;
+                                width: 1.2em;
+                                line-height: 1.2em;
+                                text-align: center;
+                                display: block;
+                                text-decoration: none!important;
+                                font-style: normal!important;
+                                font-weight: normal!important;
+                                text-transform: none!important;
+                                speak: none;
+                                -moz-transition: background-color 0.2s ease-in-out 0s;
+                                -webkit-transition: background-color 0.2s ease-in-out 0s;
+                                transition: background-color 0.2s ease-in-out 0s;
+                                -moz-box-sizing: content-box;
+                                -webkit-box-sizing: content-box;
+                                box-sizing: content-box;
+                                &:hover {
+                                    color: $redColor!important;
+                                }
+                            }
+                        }
+                    }
                     h3 {
                         font-size: 14px;
                         font-weight: 500;
