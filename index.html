@@ -65,7 +65,7 @@
             }
             return Promise.all(promises);
         }
-        preloadImages(["imgs/favicon.ico", "imgs/logo.png", "imgs/reviews-slider-section-bg-img.png", "imgs/KiSocial_HeroIMG.png", "imgs/asset_1-min-1.jpg", "imgs/Asset.png", "imgs/1.png", "imgs/Asset-1-min.png", "imgs/election.png", "imgs/small-business.png", "imgs/public-opinion.png", "imgs/download-section-bg-img.png", "imgs/agencies.png", "imgs/reviews1.png"]).then(function(imgs) {
+        preloadImages(["imgs/favicon.ico", "imgs/logo.png", "imgs/reviews-slider-section-bg-img.png", "imgs/KiSocial_HeroIMG.png", "imgs/asset_1-min-1.jpg", "imgs/Asset.png", "imgs/1.png", "imgs/Asset-1-min.png", "imgs/election.png", "imgs/small-business.png", "imgs/public-opinion.png", "imgs/download-section-bg-img.png", "imgs/agencies.png", "imgs/reviews1.png", "imgs/KI-Live-conference.png", "imgs/KI-privacy-policy-genius.png", "imgs/Twitter-analytics.png", "imgs/outbreak.png"]).then(function(imgs) {
             console.log('loaded');
         }, function(errImg) {
             console.log('failed to loaded');
@@ -177,7 +177,7 @@
         </button></div>
                 <div class="modal-body">
                     <h5 class="modal-title">Be <span>the first</span> to hear!</h5>
-                    <p>Sign up to get notified when I lanuch, becausee I have some great stuff prepared for you, so stay tuned!</p>
+                    <p>Sign up to get notified when we lanuch, because we have some great stuff prepared for you, so stay tuned!</p>
                     <form>
                         <input type="text" class="form-control mb-4" placeholder="Full name">
                         <input type="email" class="form-control" placeholder="Your email"></form>
@@ -200,7 +200,7 @@
                         <h1>Realtime Social Data Intelligence</h1>
                         <p>Analyse public behavior towards topics, products and events</p>
                         <div class="btns">
-                            <a class="ml-auto ml-lg-0 mainBtn btn" href="#"><i class="fas fa-shopping-cart"></i>Purchase</a>
+                            <a class="ml-auto ml-lg-0 mainBtn btn" href="#pricing"><i class="fas fa-shopping-cart"></i>Purchase</a>
                             <a class="mr-auto mr-lg-0 secondBtn btn" href="#faqs"><i class="fas fa-bahai "></i>Use cases</a>
                         </div>
                     </div>
@@ -222,7 +222,7 @@
                             <h2>Governments</h2>
                             <p>Track public issues, concerns, opinion, and sentiment</p>
                             <div class="btn-cont">
-                                <a class="mainBtn btn" href="#"><i class="fas fa-shopping-cart" aria-hidden="true"></i>Purchase </a>
+                                <a class="mainBtn btn" href="#pricing"><i class="fas fa-shopping-cart" aria-hidden="true"></i>Purchase </a>
                                 <a data-faqs="gov" class="secondBtn btn" data-scroll="" href="#faqs"><i class=" fas fa-info-circle"></i>More Info</a>
                             </div>
                         </div>
@@ -236,7 +236,7 @@
                             <h2>Agencies</h2>
                             <p>Support your client needs, beat your competitors</p>
                             <div class="btn-cont">
-                                <a class="mainBtn btn" href="#"><i class="fas fa-shopping-cart" aria-hidden="true"></i>Purchase </a>
+                                <a class="mainBtn btn" href="#pricing"><i class="fas fa-shopping-cart" aria-hidden="true"></i>Purchase </a>
                                 <a data-faqs="agencies" class="secondBtn btn" data-scroll="" href="#faqs"><i class=" fas fa-info-circle"></i>More Info</a>
                             </div>
                         </div>
@@ -250,7 +250,7 @@
                             <h2>Enterprise and brands</h2>
                             <p>Listen, identify, and track influencers, and consumer preferences</p>
                             <div class="btn-cont">
-                                <a class="mainBtn btn" href="#"><i class="fas fa-shopping-cart" aria-hidden="true"></i>Purchase </a>
+                                <a class="mainBtn btn" href="#pricing"><i class="fas fa-shopping-cart" aria-hidden="true"></i>Purchase </a>
                                 <a data-faqs="enterprise" class="secondBtn btn" data-scroll="" href="#faqs"><i class=" fas fa-info-circle"></i>More Info</a>
                             </div>
                         </div>
@@ -263,7 +263,7 @@
                             <h2>Small Business Owners</h2>
                             <p>Identify follower affinities &amp; whats trending in your business sector</p>
                             <div class="btn-cont">
-                                <a class="mainBtn btn" href="#"><i class="fas fa-shopping-cart" aria-hidden="true"></i>Purchase </a>
+                                <a class="mainBtn btn" href="#pricing"><i class="fas fa-shopping-cart" aria-hidden="true"></i>Purchase </a>
                                 <a data-faqs="small" class="secondBtn btn" data-scroll="" href="#faqs"><i class=" fas fa-info-circle"></i>More Info</a>
                             </div>
                         </div>
@@ -329,7 +329,7 @@
         </div>
         <!--End features-->
         <!--Start Pricicng-->
-        <div class="pricing text-center">
+        <div class="pricing text-center" id="pricing">
             <div class="container">
                 <h2 class="h1"> Pricing</h2>
                 <p class="lead">Offer multiple packages or monthly subscriptions? Why not showcase your featured price plans here, bold and beautifully.</p>
@@ -549,7 +549,7 @@
                         <h2 class="h1">Ready to master data analytics with KI Social training? </h2>
                         <p>Start our KI Social training today and find the courses you’re interested in, learn everything you need to know about data programs, privacy protection, and more to help you grow safely and organically.</p>
                         <div class="btns">
-                            <a class="mainBtn btn m-auto ml-lg-0" href="#"><i class="far fa-question-circle"></i>Train now</a></div>
+                            <a class="mainBtn btn m-auto ml-lg-0" href="#" data-toggle="modal" data-target="#comingsoon"><i class="far fa-question-circle"></i>Train now</a></div>
                     </div>
                     <div class="col-lg-5 offset-lg-1 col-sm-12 download-img">
                         <img src="imgs/Asset-2.png">
@@ -564,32 +564,55 @@
                 <div class="owl-carousel owl-carousel-homepage-slider1 owl-theme">
                     <div class="row no-gutters course-cont">
                         <div class="col-lg-5 img-title">
-                            <img src="imgs/Asset-2.png">
+                            <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" src="imgs/KI-privacy-policy-genius.png">
                         </div>
-                        <div class="course-title col-lg-5 offset-lg-1 text-center text-lg-left">
+                        <div class="course-title col-lg-5 offset-lg-1  text-center text-lg-left">
                             <span>OUR TOOLS</span>
                             <h2>KI Privacy Policy Genius</h2>
                             <p>The privacy Policy Genius allows you to input information about your company and its data protection and handling practices, and creates a privacy policy customized to your answers. Where is data stored? What safeguards are
                                 in place?</p>
                             <p>This plugin allows you to create a privacy policy for your user in less than 10 minutes.</p>
-                            <div class="btn-cont ">
-                                <a class="mainBtn btn" href="https://wordpress.org/plugins/policy-genius/ "><i class="far fa-arrow-alt-circle-down " aria-hidden="true "></i>Download NOW</a>
+                            <div class="btn-cont">
+                                <a class="mainBtn btn" href="https://wordpress.org/plugins/policy-genius/"><i class="far fa-arrow-alt-circle-down" aria-hidden="true"></i>Download NOW</a>
                             </div>
                         </div>
                     </div>
-                    <div class="row no-gutters course-cont ">
-                        <div class="col-lg-5 img-title ">
-                            <img src="imgs/Asset-2.png">
+                    <div class="row no-gutters course-cont">
+                        <div class="col-lg-5 img-title">
+                            <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" src="imgs/KI-Live-conference.png">
                         </div>
-                        <div class="course-title col-lg-5 offset-lg-1 text-center text-lg-left ">
+                        <div class="course-title col-lg-5 offset-lg-1  text-center text-lg-left">
                             <span>OUR TOOLS</span>
                             <h2>KI Live Video Conferences</h2>
                             <p>KI Live Video enables online communication for audio meetings, video meetings, and seminars, with built-in features such as chat, screen-sharing, and recording. Employees at every level within an organization can use video
                                 conferencing tools to host or attend virtual meetings with fellow employees, company partners, or customers, no matter where the attendees are physically located.</p>
                             <p>This plugin enables long-distance or international communication, enhanc collaboration, and reduce travel costs.</p>
                             <div class="btn-cont">
-                                <a class="mainBtn btn" href="https://wordpress.org/plugins/ki-live-video-conferences/ "><i class="far fa-arrow-alt-circle-down " aria-hidden="true "></i>Download NOW</a>
-                            </div>
+                                <a class="mainBtn btn" href="https://wordpress.org/plugins/ki-live-video-conferences/"><i class="far fa-arrow-alt-circle-down" aria-hidden="true"></i>Download NOW</a></div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters course-cont">
+                        <div class="col-lg-5 img-title">
+                            <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" src="imgs/Twitter-analytics.png">
+                        </div>
+                        <div class="course-title col-lg-5 offset-lg-1  text-center text-lg-left">
+                            <span>OUR TOOLS</span>
+                            <h2>KI Twitter Analytics</h2>
+                            <p>KI Twitter Analytics provides users with free analysis of their twitter account inbox, incoming messages, outgoing messages, mentions and other statistics.</p>
+                            <p>The plugin features a network analyzer that digs into details of potential clients, competitors, or followers.</p>
+                            <div class="btn-cont">
+                                <a class="mainBtn btn" href="https://wordpress.org/plugins/ki-twitter-analytics/"><i class="far fa-arrow-alt-circle-down" aria-hidden="true"></i>Download NOW</a></div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters course-cont">
+                        <div class="col-lg-5 img-title">
+                            <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" src="imgs/outbreak.png"></div>
+                        <div class="course-title col-lg-5 offset-lg-1  text-center text-lg-left">
+                            <span>OUR TOOLS</span>
+                            <h2>KI Outbreaks info</h2>
+                            <p>This website aims to bring you the latest news about outbreaks. It shows the updates around the world from daily number infected to statistics about the digital engagement like top hashtags, sources and others.</p>
+                            <div class="btn-cont">
+                                <a class="mainBtn btn" href="https://outbreaks.info/"><i class="far fa-arrow-alt-circle-down" aria-hidden="true"></i>Visit NOW</a></div>
                         </div>
                     </div>
                 </div>
