@@ -1,15 +1,20 @@
 $lisnum: 4;
+
 body.trial {
+
     nav,
     .footer {
         display: none !important;
     }
+
     span.error {
         padding-left: 0 !important;
     }
+
     .wrapper {
         padding: 0 !important
     }
+
     .start-trial {
         height: 100%;
         display: flex;
@@ -17,9 +22,11 @@ body.trial {
         min-height: 946px;
         justify-content: center;
         align-items: center;
+
         @media (max-width: 576px) {
             min-height: auto;
         }
+
         .start-trial-container {
             .progressbar {
                 ul {
@@ -30,15 +37,18 @@ body.trial {
                     align-items: center;
                     margin: 0;
                 }
+
                 li {
                     width: 100% / $lisnum;
                     height: 20px;
                     position: relative;
+
                     &.active {
                         &:before {
                             background: #2F80ED;
                         }
                     }
+
                     &:before {
                         content: '';
                         width: 15px;
@@ -49,13 +59,16 @@ body.trial {
                         position: relative;
                         z-index: 3;
                     }
+
                     &:last-of-type {
                         width: 15px;
+
                         &:after,
                         span {
                             display: none;
                         }
                     }
+
                     &:after {
                         content: '';
                         width: 100%;
@@ -67,6 +80,7 @@ body.trial {
                         top: 5px;
                         left: 1px;
                     }
+
                     span {
                         width: 0;
                         height: 5px;
@@ -80,12 +94,15 @@ body.trial {
                     }
                 }
             }
+
             .form {
                 position: relative;
             }
+
             fieldset:not(:first-of-type) {
                 display: none;
             }
+
             fieldset {
                 max-width: 460px;
                 width: 100%;
@@ -94,8 +111,10 @@ body.trial {
                 box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
                 padding: 40px;
                 position: relative;
+
                 .head-content {
                     margin-bottom: 40px;
+
                     h1,
                     h2 {
                         font-style: normal;
@@ -108,20 +127,24 @@ body.trial {
                         width: 100%;
                         color: #333;
                         margin-top: 30px;
+
                         @media (max-width: 576px) {
                             font-size: 30px;
                         }
                     }
+
                     h2 {
                         font-weight: 500;
                         font-size: 24px;
                         line-height: 28px;
                         text-align: left;
                         margin: 25px 0 20px 0;
+
                         @media (max-width: 576px) {
                             font-size: 19px
                         }
                     }
+
                     p {
                         font-style: normal;
                         font-weight: 400;
@@ -131,19 +154,23 @@ body.trial {
                         color: #828282;
                         text-align: left;
                         margin-bottom: 25px;
+
                         @media (max-width: 576px) {
                             font-size: 13px
                         }
                     }
                 }
+
                 .radiobtn {
                     margin-bottom: 20px;
+
                     input {
                         position: absolute;
                         opacity: 0;
                         cursor: pointer;
                         width: 0;
                     }
+
                     label {
                         display: block;
                         position: relative;
@@ -155,11 +182,14 @@ body.trial {
                         -ms-user-select: none;
                         user-select: none;
                         line-height: 20px;
+
                         @media (max-width: 576px) {
                             font-size: 15px
                         }
+
                         padding-left: 28px;
                     }
+
                     .checkmark {
                         position: absolute;
                         top: 0;
@@ -172,18 +202,22 @@ body.trial {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+
                         &:after {
                             content: '';
                             display: none;
                             position: absolute;
                         }
                     }
+
                     label input:checked~.checkmark {
                         border-color: #2F80ED;
                     }
+
                     label input:checked~.checkmark:after {
                         display: block;
                     }
+
                     /* Style the indicator (dot/circle) */
                     label .checkmark:after {
                         width: 10px;
@@ -192,17 +226,20 @@ body.trial {
                         background: #2F80ED;
                     }
                 }
+
                 .checkbox {
                     margin-top: 20px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+
                     input {
                         position: absolute;
                         opacity: 0;
                         cursor: pointer;
                         width: 0;
                     }
+
                     label {
                         position: relative;
                         display: flex;
@@ -221,22 +258,27 @@ body.trial {
                         -ms-user-select: none;
                         user-select: none;
                         width: 100%;
+
                         &:hover input~.checkmark,
                         input:focus~.checkmark {
                             background: #ccc;
                         }
+
                         p {
                             display: inline-block;
                             margin: 3px 0 0 10px;
+
                             @media (max-widtH: 576px) {
                                 font-size: 14px;
                             }
                         }
+
                         input {
                             &:checked {
                                 &~.checkmark:after {
                                     display: block;
                                 }
+
                                 &~.checkmark {
                                     background: #2F80ED;
                                     border-color: #2F80ED;
@@ -244,6 +286,7 @@ body.trial {
                             }
                         }
                     }
+
                     .checkmark {
                         display: inline-block;
                         position: relative;
@@ -254,6 +297,7 @@ body.trial {
                         border: 2px solid #bdbdbd;
                         border-radius: 3px;
                         background: transparent;
+
                         &:after {
                             content: "";
                             display: none;
@@ -268,24 +312,64 @@ body.trial {
                         }
                     }
                 }
+
                 .input-100 {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     margin-top: 36px;
+
+                    &.input-added {
+                        margin-top: 0;
+                        position: relative;
+
+                        &:hover {
+                            .close {
+                                display: block;
+                            }
+                        }
+
+                        .close {
+                            text-align: center;
+                            display: none;
+                            position: absolute;
+                            right: -20px;
+                            width: 20px;
+                            font-size: 12px;
+                            font-weight: 300;
+                            background: #fd1616;
+                            height: 20px;
+                            border-radius: 50%;
+                            line-height: 20px;
+                            cursor: pointer;
+                            color: #fff;
+                        }
+
+                        .input-50 {
+                            margin-top: 0;
+
+                            input {
+                                border-top: 0 !important
+                            }
+                        }
+                    }
+
                     &.select {
                         flex-direction: column;
                     }
+
                     .input-50 {
                         max-width: 50%;
                         width: 100%;
                         flex: 0 0 50%;
                         margin-top: 20px;
                     }
+
                     &>.selectbox {
                         display: flex;
                         justify-content: center;
                         align-items: center;
+
                         select {
                             width: 104px;
                             border: none;
@@ -297,8 +381,10 @@ body.trial {
                         }
                     }
                 }
+
                 .input {
                     width: 100%;
+
                     label {
                         font-style: normal;
                         font-weight: 500;
@@ -310,10 +396,12 @@ body.trial {
                         color: #333333;
                         text-transform: uppercase;
                         margin: 0 0 12px 0;
+
                         @media (max-width: 576px) {
                             font-size: 10px
                         }
                     }
+
                     input {
                         width: 100% !important;
                         padding: 12px 0;
@@ -321,15 +409,18 @@ body.trial {
                         border-top: 1px solid #E0E0E0;
                         border-bottom: 1px solid #E0E0E0;
                         font-size: 13px;
+
                         &::placeholder {
                             color: #BDBDBD;
                             font-size: 12px;
+
                             @media (max-width: 576px) {
                                 font-size: 9px
                             }
                         }
                     }
                 }
+
                 .input-summary-container {
                     span {
                         display: block;
@@ -340,10 +431,13 @@ body.trial {
                         font-weight: 500;
                         font-size: 11px;
                     }
+
                     .input-100 {
                         margin-top: 0;
+
                         .input-summary {
                             display: flex;
+
                             label {
                                 padding: 12px 14px;
                                 margin: 0;
@@ -357,11 +451,13 @@ body.trial {
                                 display: block;
                                 line-height: 16px;
                             }
+
                             input {
                                 width: auto;
                                 padding: 12px 0;
                             }
                         }
+
                         &:not(:last-of-type) {
                             .input-summary {
                                 input {
@@ -369,6 +465,7 @@ body.trial {
                                 }
                             }
                         }
+
                         &:last-of-type {
                             .input-summary {
                                 label {
@@ -378,11 +475,13 @@ body.trial {
                         }
                     }
                 }
+
                 .add-another {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     margin-top: 13px;
+
                     .add {
                         color: #2F80ED;
                         font-style: normal;
@@ -390,10 +489,12 @@ body.trial {
                         font-weight: 500;
                         font-size: 14px;
                         cursor: pointer;
+
                         @media (max-width: 576px) {
                             font-size: 11px
                         }
                     }
+
                     p {
                         margin: 0;
                         font-weight: 500;
@@ -403,16 +504,19 @@ body.trial {
                         width: 50%;
                         text-align: right;
                         color: #BDBDBD;
+
                         @media (max-width: 576px) {
                             font-size: 11px
                         }
                     }
                 }
+
                 .summary {
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
                     margin-top: 20px;
+
                     p {
                         margin: 0;
                         font-weight: 500;
@@ -420,16 +524,19 @@ body.trial {
                         line-height: 18px;
                         letter-spacing: 0.15px;
                         color: #333333;
+
                         a {
                             color: #2F80ED
                         }
                     }
                 }
+
                 .btns {
                     display: flex;
                     justify-self: center;
                     align-items: center;
                     margin-top: 40px;
+
                     input {
                         border-radius: 26px;
                         font-style: normal;
@@ -437,6 +544,7 @@ body.trial {
                         font-size: 16px;
                         line-height: 24px;
                     }
+
                     .submit,
                     .next {
                         margin-left: 8px;
@@ -445,14 +553,17 @@ body.trial {
                         padding: 15px;
                         width: 100%;
                         transition: background-color .3s ease-in-out;
+
                         @media (max-width: 576px) {
                             font-size: 15px;
                             padding: 15px 30px;
                         }
+
                         &:hover {
                             background: #219351 !important
                         }
                     }
+
                     .cancel,
                     .prev-stage1 {
                         margin-right: 8px;
@@ -462,10 +573,12 @@ body.trial {
                         color: #4f4f4f;
                         transition: background-color .3s ease-in-out;
                         padding: 15px 45.15px;
+
                         &:hover {
                             color: #000;
                             border-color: #000
                         }
+
                         @media (max-width: 576px) {
                             width: 100%;
                             padding: 15px;
@@ -474,20 +587,24 @@ body.trial {
                     }
                 }
             }
+
             .first-stage {
                 fieldset {
                     .head-content {
                         h1 {
                             margin: 0;
                         }
+
                         p {
                             text-align: center !important;
                             margin-top: 20px;
                         }
                     }
+
                     .input-100 {
                         margin-top: 0px;
                     }
+
                     .input {
                         input {
                             padding: 15px 16px;
@@ -495,23 +612,28 @@ body.trial {
                             font-size: 16px;
                             border-top: none;
                             transition: border-color .3s ease-in-out;
+
                             &::placeholder {
                                 color: #BDBDBD;
                             }
+
                             &:focus {
                                 border-color: #333
                             }
                         }
                     }
+
                     .quick-access {
                         position: relative;
                         z-index: 1;
                         text-align: center;
                         margin: 35px 0;
+
                         span.text-line {
                             background: #fff;
                             padding: 0 15px;
                         }
+
                         &:before {
                             border-top: 1px solid #bdbdbd;
                             content: "";
@@ -528,11 +650,13 @@ body.trial {
                         }
                     }
                 }
+
                 fieldset:last-of-type {
                     .btns {
-                        margin-bottom: 0!important;
+                        margin-bottom: 0 !important;
                     }
                 }
+
                 fieldset.form {
                     max-width: 460px;
                     width: 100%;
@@ -540,21 +664,26 @@ body.trial {
                     background-color: #fff;
                     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
                     padding: 40px;
+
                     .input-100 {
                         margin-bottom: 40px;
+
                         input::placeholder {
                             font-size: 16px;
+
                             @media (max-width: 576px) {
                                 font-size: 14px
                             }
                         }
                     }
+
                     .chart {
                         background: #FFFFFF;
                         box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.06);
                         border-radius: 3px;
                         padding: 16px 16px 30px 24px;
                         margin-bottom: 40px;
+
                         h2 {
                             font-style: normal;
                             font-weight: 500;
@@ -566,10 +695,12 @@ body.trial {
                             color: #424242;
                         }
                     }
+
                     .btns {
                         margin-top: 0;
                         margin-bottom: 40px;
                         flex-direction: column;
+
                         .cancel {
                             width: 100%;
                             margin-top: 16px;
@@ -580,14 +711,17 @@ body.trial {
                             color: #4f4f4f;
                             transition: background-color .3s ease-in-out;
                             padding: 15px 45.15px;
+
                             &:hover {
                                 color: #000;
                                 border-color: #000
                             }
                         }
+
                         a {
                             width: 100%;
                             margin: 0 !important;
+
                             .next {
                                 width: 100%;
                                 margin: 0 !important

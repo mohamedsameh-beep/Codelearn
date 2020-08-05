@@ -1791,6 +1791,34 @@ body.trial .start-trial .start-trial-container fieldset .input-100 {
   align-items: center;
   margin-top: 36px;
 }
+body.trial .start-trial .start-trial-container fieldset .input-100.input-added {
+  margin-top: 0;
+  position: relative;
+}
+body.trial .start-trial .start-trial-container fieldset .input-100.input-added:hover .close {
+  display: block;
+}
+body.trial .start-trial .start-trial-container fieldset .input-100.input-added .close {
+  text-align: center;
+  display: none;
+  position: absolute;
+  right: -20px;
+  width: 20px;
+  font-size: 12px;
+  font-weight: 300;
+  background: #fd1616;
+  height: 20px;
+  border-radius: 50%;
+  line-height: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+body.trial .start-trial .start-trial-container fieldset .input-100.input-added .input-50 {
+  margin-top: 0;
+}
+body.trial .start-trial .start-trial-container fieldset .input-100.input-added .input-50 input {
+  border-top: 0 !important;
+}
 body.trial .start-trial .start-trial-container fieldset .input-100.select {
   flex-direction: column;
 }
