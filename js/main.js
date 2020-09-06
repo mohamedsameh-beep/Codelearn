@@ -104,7 +104,6 @@ jQuery(document).ready(function ($) {
       );
     });
     // FAQs sectiton hide and show panel
-    // FAQs sectiton hide and show panel
     let buttonslide = $(".faqs-one .btns button");
     buttonslide.on("click", function () {
       var faqs = setTimeout(() => {
@@ -504,7 +503,7 @@ jQuery(document).ready(function ($) {
       $(this).parent().find("input").val($(this).find("option:selected").val());
     });
     var i = 0;
-    $(".add-another").on("click", function () {
+    $(".add-another .add").on("click", function () {
       i++;
       var placeholder1 = $(this)
         .parent()
@@ -520,7 +519,7 @@ jQuery(document).ready(function ($) {
         <div class="input-100 input-two input-added">
             <span class="close">x</span>
             <div class="input input-50">
-                <input type="text" name="name-added-${i}" placeholder="${placeholder1}" required>
+                <input type="text" name="name-added-${i}" placeholder="${placeholder1}">
             </div>
             <div class="input input-50">
                 <input type="text" name="name-added-${i}" placeholder="${placeholder2}">
