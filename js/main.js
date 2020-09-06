@@ -1,5 +1,6 @@
 jQuery(document).ready(function ($) {
   "use strict";
+  var strength = 0;
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
   }
@@ -324,20 +325,105 @@ jQuery(document).ready(function ($) {
         return false;
       }
     });
+    function passwordCheck(password) {
+      if (password.length >= 8) strength += 1;
+
+      if (password.match(/(?=.*[0-9])/)) strength += 1;
+
+      if (password.match(/(?=.*[!,%,&,@,#,$,^,*,?,_,~,<,>,])/)) strength += 1;
+
+      if (password.match(/(?=.*[a-z])/)) strength += 1;
+
+      if (password.match(/(?=.*[A-Z])/)) strength += 1;
+
+      displayBar(strength);
+    }
+
+    function displayBar(strength) {
+      switch (strength) {
+        case 1:
+          $("#password-strength span").css({
+            width: "20%",
+            background: "#de1616",
+          });
+          break;
+
+        case 2:
+          $("#password-strength span").css({
+            width: "40%",
+            background: "#de1616",
+          });
+          break;
+
+        case 3:
+          $("#password-strength span").css({
+            width: "60%",
+            background: "#de1616",
+          });
+          break;
+
+        case 4:
+          $("#password-strength span").css({
+            width: "80%",
+            background: "#FFA200",
+          });
+          break;
+
+        case 5:
+          $("#password-strength span").css({
+            width: "100%",
+            background: "#06bf06",
+          });
+          break;
+
+        default:
+          $("#password-strength span").css({
+            width: "0",
+            background: "#de1616",
+          });
+      }
+    }
+    $("[data-strength]").after(
+      '<div id="password-strength" class="strength"><span></span></div>'
+    );
+    $("[data-strength]")
+      .focus(function () {
+        $("#password-strength").css({
+          height: "5px",
+        });
+      })
+      .blur(function () {
+        $("#password-strength").css({
+          height: "0px",
+        });
+      });
+
+    $("[data-strength]").keyup(function () {
+      strength = 0;
+      var password = $(this).val();
+      passwordCheck(password);
+    });
     $("input").on("keyup", function () {
       v.form();
     });
     var v = $("form").validate({
       rules: {
-        name: {
-          required: true,
-        },
-        company: {
-          required: true,
-        },
         email: {
           required: true,
           email: true,
+        },
+        username: {
+          required: true,
+        },
+        password: {
+          minlength: 5,
+        },
+        confirm_password: {
+          minlength: 5,
+          equalTo: "#password",
+        },
+        phone: {
+          required: true,
         },
       },
       errorElement: "span",
@@ -420,9 +506,14 @@ jQuery(document).ready(function ($) {
               }, 1200);
             });
           }
-          document.title = next_fs.data("name");
+        } else {
+          window.location.href =
+            document.location.origin + "/" + $(this).data("next");
         }
       }
+    });
+    $(".cancel").click(function () {
+      window.location.href = document.location.origin;
     });
     $(".prev-stage1").click(function () {
       $(this)
@@ -504,25 +595,41 @@ jQuery(document).ready(function ($) {
     });
     var i = 0;
     $(".add-another .add").on("click", function () {
-      i++;
       var placeholder1 = $(this)
+        .parent()
         .parent()
         .find(".input-100.input-two")
         .find(".input-50:first-of-type input")
         .attr("placeholder");
       var placeholder2 = $(this)
         .parent()
+        .parent()
         .find(".input-100.input-two")
         .find(".input-50:last-of-type input")
         .attr("placeholder");
-      $(this).parent().find(".input-100.input-two:not('.input-added')").after(`
+      var name1 = $(this)
+        .parent()
+        .parent()
+        .find(".input-100.input-two")
+        .find(".input-50:first-of-type input")
+        .attr("name");
+      var name2 = $(this)
+        .parent()
+        .parent()
+        .find(".input-100.input-two")
+        .find(".input-50:last-of-type input")
+        .attr("name");
+      $(this)
+        .parent()
+        .parent()
+        .find(".input-100.input-two:not('.input-added')").after(`
         <div class="input-100 input-two input-added">
             <span class="close">x</span>
             <div class="input input-50">
-                <input type="text" name="name-added-${i}" placeholder="${placeholder1}">
+                <input type="text" name="${name1}" placeholder="${placeholder1}">
             </div>
             <div class="input input-50">
-                <input type="text" name="name-added-${i}" placeholder="${placeholder2}">
+                <input type="text" name="${name2}" placeholder="${placeholder2}">
             </div>
         </div>`);
     });

@@ -45,9 +45,9 @@
         <div class="start-trial">
             <div class="start-trial-container second">
                 <div class="container">
-                    <form action="" class="form">
-                        <div class="second-stage">
-                            <fieldset data-name="Products">
+                    <form action="" method="post" name="user_registeration" class="form">
+                        <div class="second-stage" data-stages="5">
+                            <fieldset class="form">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -60,31 +60,31 @@
                                 <div class="head-content">
                                     <h1 class="text-center">Products</h1>
                                     <h2>Breakdown By Brand Products</h2>
-                                    <p>Focus on and compare conversations about the brand's specific products. (You can
-                                        enter any useful category here e.g. TV characters, features or events)</p>
+                                    <p>Focus on and compare conversations about the brand's specific products. (You can enter any useful
+                                        category here e.g. TV characters, features or events)</p>
                                 </div>
                                 <div class="radiobtn">
-                                    <label for="radio1-product">No Thanks
-                                        <input type="radio" class="form-control" name="breakdown" id="radio1-product">
+                                    <label for="product_breakdown">No Thanks
+                                        <input type="radio" class="form-control" name="product_breakdown" id="product_breakdown">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="radiobtn">
-                                    <label for="radio2-product">Break down by brand products
-                                        <input type="radio" class="form-control" name="breakdown" id="radio2-product"
+                                    <label for="product_breakdown_off">Break down by brand products
+                                        <input type="radio" class="form-control" name="product_breakdown" id="product_breakdown_off"
                                             checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="input-100 input-two">
                                     <div class="input input-50">
-                                        <label for="input1-product" class="text-uppercase">Product Name*</label>
-                                        <input type="text" name="name" id="input1-product"
-                                            placeholder="Click to add a product" required>
+                                        <label for="product_name" class="text-uppercase">Product Name*</label>
+                                        <input type="text" class="required" name="product_name" id="product_name"
+                                            placeholder="Click to add a product" required="">
                                     </div>
                                     <div class="input input-50">
-                                        <label for="input2-product" class="text-uppercase">Product Aliases</label>
-                                        <input type="text" name="" id="input2-product"
+                                        <label for="product_aliases" class="text-uppercase">Product Aliases</label>
+                                        <input type="text" name="Click to add a product aliases" id="Click to add a product aliases"
                                             placeholder="Click to add a product aliases">
                                     </div>
                                 </div>
@@ -93,11 +93,11 @@
                                     <p>*required fields</p>
                                 </div>
                                 <div class="btns">
-                                    <a href="/" class="btn cancel">Cancel</a>
+                                    <a href="http://localhost/wordpress" class="btn cancel">Cancel</a>
                                     <input type="button" value="Next" class="btn next">
                                 </div>
                             </fieldset>
-                            <fieldset data-name="Hashtag">
+                            <fieldset class="form">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -113,24 +113,23 @@
                                     <p>See a breakdown of data for each hashtag you enter.</p>
                                 </div>
                                 <div class="radiobtn">
-                                    <label for="radio1-hashtag">No Thanks
-                                        <input type="radio" class="form-control" name="breakdown-hashtag"
-                                            id="radio1-hashtag">
+                                    <label for="product_hashtag">No Thanks
+                                        <input type="radio" class="form-control" name="product_hashtag" id="product_hashtag">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="radiobtn">
-                                    <label for="radio2-hashtag">Break down by hashtag
-                                        <input type="radio" class="form-control" name="breakdown-hashtag"
-                                            id="radio2-hashtag" checked="checked">
+                                    <label for="product_hashtag_off">Break down by hashtag
+                                        <input type="radio" class="form-control" name="product_hashtag" id="product_hashtag_off"
+                                            checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="input-100">
                                     <div class="input">
-                                        <label for="input1-hashtag" class="text-uppercase">Hashtags</label>
-                                        <input type="text" name="name" id="input1-hashtag"
-                                            placeholder="Click to add hashtags">
+                                        <label for="hashtag" class="text-uppercase">Hashtags</label>
+                                        <input type="text" name="hashtag" id="hashtag" placeholder="Click to add hashtags" class="required"
+                                            required="">
                                     </div>
                                 </div>
                                 <div class="btns">
@@ -138,7 +137,7 @@
                                     <input type="button" value="Next" class="btn next">
                                 </div>
                             </fieldset>
-                            <fieldset data-name="People">
+                            <fieldset class="form">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -151,33 +150,31 @@
                                 <div class="head-content">
                                     <h1 class="text-center">People</h1>
                                     <h2>References to key People</h2>
-                                    <p>Keep an eye on what's being said about key people associated with the brand.This
-                                        could be anyone: the CEO, celebrity advocates or brand ambassadors.</p>
+                                    <p>Keep an eye on what's being said about key people associated with the brand.This could be anyone: the
+                                        CEO, celebrity advocates or brand ambassadors.</p>
                                 </div>
                                 <div class="radiobtn">
-                                    <label for="radio1-people">No Thanks
-                                        <input type="radio" class="form-control" name="breakdown-people"
-                                            id="radio1-people">
+                                    <label for="people_breakdown">No Thanks
+                                        <input type="radio" class="form-control" name="people_breakdown" id="people_breakdown">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="radiobtn">
-                                    <label for="radio2-people">Break down by key people
-                                        <input type="radio" class="form-control" name="breakdown-people"
-                                            id="radio2-people" checked="checked">
+                                    <label for="people_breakdown_off">Break down bykey peoples
+                                        <input type="radio" class="form-control" name="people_breakdown" id="people_breakdown_off"
+                                            checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="input-100 input-two">
                                     <div class="input input-50">
-                                        <label for="input1-people" class="text-uppercase">Person's Name*</label>
-                                        <input type="text" name="name" id="input1-people"
-                                            placeholder="Click to add names" required>
+                                        <label for="product_name" class="text-uppercase">Person's Name*</label>
+                                        <input type="text" class="required" name="person_name" id="person_name"
+                                            placeholder="Click to add names" required="">
                                     </div>
                                     <div class="input input-50">
-                                        <label for="input2-people" class="text-uppercase">Person's twitter
-                                            handle</label>
-                                        <input type="text" name="" id="input2-people"
+                                        <label for="product_aliases" class="text-uppercase">Person's twitter handle</label>
+                                        <input type="text" name="Click to add a twitter handle" id="Click to add a twitter handle"
                                             placeholder="Click to add a twitter handle">
                                     </div>
                                 </div>
@@ -190,7 +187,7 @@
                                     <input type="button" value="Next" class="btn next">
                                 </div>
                             </fieldset>
-                            <fieldset data-name="Content">
+                            <fieldset class="form">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -206,25 +203,23 @@
                                     <p>See a breakdown of data for each hashtag you enter.</p>
                                 </div>
                                 <div class="radiobtn">
-                                    <label for="radio1-content">No Thanks
-                                        <input type="radio" class="form-control" name="breakdown-content"
-                                            id="radio1-content">
+                                    <label for="content_hashtag">No Thanks
+                                        <input type="radio" class="form-control" name="content_hashtag" id="content_hashtag">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="radiobtn">
-                                    <label for="radio2-content">Break down by hashtag
-                                        <input type="radio" class="form-control" name="breakdown-content"
-                                            id="radio2-content" checked="checked">
+                                    <label for="content_hashtag_off">Break down by hashtag
+                                        <input type="radio" class="form-control" name="content_hashtag" id="content_hashtag_off"
+                                            checked="checked">
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <div class="input-100">
                                     <div class="input">
-                                        <label for="input1-content" class="text-uppercase">Brand owned twitter
-                                            handles</label>
-                                        <input type="text" name="" id="input1-content"
-                                            placeholder="Click to add twitter handles">
+                                        <label for="content" class="text-uppercase">Brand owned twitter handles</label>
+                                        <input type="text" name="content" id="content" placeholder="Click to add twitter handles"
+                                            class="required" required="">
                                     </div>
                                 </div>
                                 <div class="btns">
@@ -232,7 +227,7 @@
                                     <input type="button" value="Next" class="btn next">
                                 </div>
                             </fieldset>
-                            <fieldset class="summary" data-name="Summary">
+                            <fieldset class="form">
                                 <div class="progressbar">
                                     <ul class="list-unstyled">
                                         <li class="active"><span></span></li>
@@ -245,7 +240,7 @@
                                 <div class="head-content">
                                     <h1 class="text-center">Summary</h1>
                                     <h2>We're Building a Dashboard for You</h2>
-                                    <p>Your Dashboard will contain the following Categories and Rules.</p>
+                                    <p>Your Dashboard will contain the following Categories and Rules..</p>
                                 </div>
                                 <div class="input-summary-container">
                                     <span class="text-uppercase">New</span>
@@ -263,8 +258,7 @@
                                     </div>
                                     <div class="input-100">
                                         <div class="input input-summary">
-                                            <label for="input3-summary" class="text-uppercase">queries /
-                                                channels</label>
+                                            <label for="input3-summary" class="text-uppercase">queries / channels</label>
                                             <input type="text" name="" id="input3-summary" placeholder="KISocial">
                                         </div>
                                     </div>
@@ -276,12 +270,11 @@
                                     </div>
                                 </div>
                                 <div class="summary">
-                                    <p>1 Dashboard, 2 Categories, 3 Subcategories<br> and 3 Rules. <a href="#">Show
-                                            details</a></p>
+                                    <p>1 Dashboard, 2 Categories, 3 Subcategories and 3 Rules. <br><a href="#">Show details</a></p>
                                 </div>
                                 <div class="btns">
-                                    <input type="button" value="Back" class="btn  prev-stage1">
-                                    <input type="submit" value="See your data" class="btn submit">
+                                    <input type="button" value="Back" class="btn prev-stage1" name="user_registeration">
+                                    <input type="submit" value="See your data" class="btn submit" name="user_registeration">
                                 </div>
                             </fieldset>
                         </div>
